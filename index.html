@@ -3,172 +3,445 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Manhã de Fé — devocional diário</title>
-<meta name="description" content="Manhã de Fé: um versículo, uma reflexão e uma oração narrados toda manhã. Aplicativo devocional diário para Android e iPhone.">
-<style>
-  :root{
-    --creme:#FBF6EC; --tinta:#221D18; --azul:#1E3A5F;
-    --dourado:#C8952E; --dourado-texto:#6B4A12;
+<title>Manhã de Fé · Toda manhã, uma palavra de fé no seu celular</title>
+<meta name="description" content="Devocional diário para católicos e evangélicos: versículo, reflexão e oração em letra grande, com uma voz que lê para você e um cartão pronto para mandar à família. 7 dias grátis, depois R$ 9,90 por ano.">
+<link rel="canonical" href="https://manhadefe.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Manhã de Fé">
+<meta property="og:title" content="Manhã de Fé · Toda manhã, uma palavra de fé no seu celular">
+<meta property="og:description" content="Versículo, reflexão e oração em letra grande, com uma voz que lê para você. Para católicos e evangélicos.">
+<meta property="og:url" content="https://manhadefe.com.br/">
+<meta property="og:image" content="https://manhadefe.com.br/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FBF6EC">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icone-180.png">
+<link rel="preload" href="/fontes/lora-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fontes/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/site.css">
+<script src="/js/config.js" defer></script>
+<script src="/js/site.js" defer></script>
+<script src="/js/versiculos.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Manhã de Fé",
+  "legalName": "AUREA EDUCACIONAL LTDA",
+  "taxID": "67.140.776/0001-88",
+  "url": "https://manhadefe.com.br/",
+  "email": "contato@manhadefe.com.br",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Pedro Vieira da Silva, 64",
+    "addressLocality": "Campinas",
+    "addressRegion": "SP",
+    "postalCode": "13080-570",
+    "addressCountry": "BR"
   }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--creme);color:var(--tinta);
-       font-family:Georgia,'Times New Roman',serif;font-size:18px;line-height:1.6}
-  .pagina{max-width:800px;margin:0 auto;padding:32px 20px 72px}
-  header{border-bottom:4px solid var(--dourado);padding-bottom:20px;margin-bottom:28px}
-  h1{font-size:34px;color:var(--azul);margin:0 0 6px}
-  .sub{color:var(--dourado-texto);margin:0;font-size:19px}
-  h2{font-size:25px;color:var(--azul);margin:40px 0 12px;
-     border-bottom:2px solid #e3d8c2;padding-bottom:6px}
-  h3{font-size:20px;color:var(--azul);margin:26px 0 8px}
-  p{margin:12px 0}
-  ul{margin:12px 0 12px 22px;padding:0}
-  li{margin:8px 0}
-  .caixa{background:#fff;border:2px solid var(--tinta);border-radius:14px;
-         padding:18px 20px;margin:22px 0}
-  .destaque{background:#fff8e8;border:2px dashed var(--dourado-texto);
-            border-radius:14px;padding:18px 20px;margin:22px 0;font-size:19px}
-  a{color:var(--azul)}
-  footer{margin-top:52px;padding-top:18px;border-top:2px solid #e3d8c2;
-         font-size:16px;color:var(--dourado-texto);
-         font-family:Arial,Helvetica,sans-serif}
-  .data{font-size:16px;color:var(--dourado-texto);font-family:Arial,Helvetica,sans-serif}
-</style>
+}
+</script>
 </head>
 <body>
-<div class="pagina">
-
-<header>
-  <h1>Manhã de Fé</h1>
-  <p class="sub">Um versículo, uma reflexão e uma oração — narrados, toda manhã.</p>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+  <div class="container topo-dentro">
+    <a class="marca" href="/" aria-label="Manhã de Fé, página inicial">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 34a10 10 0 0 1 20 0z" fill="#C8952E"/><g fill="none" stroke="#C8952E" stroke-width="3" stroke-linecap="round"><path d="M24 11v5"/><path d="M12.5 16.5l3.4 3.4"/><path d="M35.5 16.5l-3.4 3.4"/><path d="M6 27h4.5"/><path d="M37.5 27H42"/></g><path d="M7 34.5h34" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round"/></svg>
+      <span>Manhã de Fé</span>
+    </a>
+    <nav aria-label="Atalhos">
+      <ul class="atalhos">
+        <li><a href="#cartao">Ver um cartão</a></li>
+        <li><a href="#preco">Quanto custa</a></li>
+        <li><a class="atalho-destaque" href="#baixar"><span class="so-lojas">Baixar</span><span class="so-pre">Me avise</span></a></li>
+        <li><a href="#contato">Fale com a gente</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-<p>Manhã de Fé é um aplicativo devocional diário para celular. Toda manhã chega
-um aviso; um toque e a mensagem do dia está ali, em letra grande, com narração:
-o versículo, uma reflexão curta e uma oração. Quem é católico encontra também o
-Santo do dia e o Terço guiado; quem é evangélico encontra o Hino do dia e as
-orações guiadas.</p>
+<main id="conteudo">
 
-<p>O aplicativo foi desenhado para ser simples de usar: botões grandes, tudo com
-desenho <em>e</em> palavra, nada que pisca e nada que some sozinho. Depois de
-instalado, funciona sem internet.</p>
+  <!-- 1. Promessa -->
+  <section class="promessa">
+    <div class="container promessa-grade">
+      <div>
+        <p class="rotulo">Devocional diário · para católicos e evangélicos · funciona sem internet</p>
+        <h1>Toda manhã, uma palavra de fé no seu celular.
+          <span class="h1-linha2">Em letra grande, lida em voz alta e pronta para mandar para a família.</span></h1>
+        <p class="promessa-sub">O aviso chega no horário que você escolher. Um toque e aparecem o versículo do dia, uma reflexão curta e uma oração, com música e uma voz que lê tudo para você. Na primeira vez, você escolhe: católico ou evangélico.</p>
+        <div class="promessa-acoes">
+          <a class="botao botao-secundario" href="#cartao">Ver um cartão de verdade</a>
+        </div>
+        <ul class="numeros" aria-label="O Manhã de Fé em números">
+          <li><strong>392</strong> mensagens para as manhãs do ano</li>
+          <li><strong>13</strong> festas do ano com mensagem própria</li>
+          <li><strong>4</strong> mistérios do Terço, guiados pela voz</li>
+          <li><strong>0</strong> propaganda e nenhuma senha</li>
+        </ul>
+      </div>
+      <div class="baixar" id="baixar" data-baixar>
+        <noscript><p>Para baixar, abra <a href="/baixar/">manhadefe.com.br/baixar</a> no celular.</p></noscript>
+      </div>
+    </div>
+  </section>
 
-<div class="destaque">
-  <strong>Disponível em breve</strong> para Android (Google Play) e iPhone
-  (App Store). O aplicativo é gratuito para instalar, com 5 dias de acesso
-  gratuito. Depois, a assinatura é de R$ 9,90 por ano.
-</div>
+  <!-- Presente de Natal: aparece sozinha entre 15/11 e 25/12 (js/config.js) -->
+  <section class="natal" data-natal hidden>
+    <div class="container">
+      <h2>Um presente de Natal que chega toda manhã</h2>
+      <p>Instale no celular de quem você ama. A partir daí, toda manhã chega uma mensagem para eles. O ano inteiro custa <span data-preco>R$ 9,90</span>.</p>
+      <p><a href="#pergunta-pais">Como instalar no celular deles</a></p>
+    </div>
+  </section>
 
-<h2>Quem publica</h2>
-<div class="caixa">
-  <p style="margin-top:0"><strong>ÁUREA EDUCACIONAL</strong><br>
-  CNPJ 67.140.776/0001-88<br>
-  Contato: <a href="mailto:contato@manhadefe.com.br">contato@manhadefe.com.br</a></p>
-</div>
+  <!-- 2. Para quem é -->
+  <section class="secao secao-alt" id="para-quem-e">
+    <div class="container quem-grade">
+      <div>
+        <h2>Para quem é</h2>
+        <p class="manifesto">Para quem quer começar o dia com Deus, mas acorda com o dia já correndo.</p>
+        <p>Antes do café já tem gente chamando, conta para pagar, notícia no celular. O Manhã de Fé ocupa o primeiro minuto: você lê ou escuta uma palavra, faz uma oração e segue o dia.</p>
+        <p>Não é curso de Bíblia, não é rede social, não tem propaganda e não pede senha. É um cartão por dia, com letra grande e botões grandes, cada um com desenho e palavra.</p>
+      </div>
+      <aside class="caixa-cuidado">
+        <h3>Para quem cuida de alguém de longe</h3>
+        <p>Instale no celular do seu pai, da sua mãe, da sua avó. Toda manhã chega uma mensagem para eles, na hora que eles escolherem.</p>
+        <p>E quando quiserem, eles mandam o cartão para o grupo da família.</p>
+      </aside>
+    </div>
+  </section>
 
-<h2>Suporte</h2>
-<p>Dúvidas, problemas para instalar, assinatura ou sugestões: escreva para
-<a href="mailto:contato@manhadefe.com.br">contato@manhadefe.com.br</a>.
-Respondemos em até 2 dias úteis.</p>
+  <!-- 3. O que tem dentro -->
+  <section class="secao" id="o-que-tem">
+    <div class="container">
+      <h2>O que tem dentro</h2>
+      <p class="secao-intro">Tudo o que está no aplicativo, contado nele mesmo.</p>
+      <ol class="capitulos">
+        <li><div><h3>O cartão da manhã</h3><p>Versículo em letra grande, uma reflexão curta que fala com você, uma oração, música e uma voz que lê tudo.</p></div></li>
+        <li><div><h3>As mensagens do ano</h3><p>243 para o Tempo Comum, 46 para a Quaresma, 50 para a Páscoa, 28 para o Advento e 12 para o Natal. A mensagem acompanha o tempo do ano.</p></div></li>
+        <li><div><h3>As festas</h3><p>13 dias com mensagem própria, igual para todo mundo: Natal, Páscoa, Sexta-feira Santa, Pentecostes, Dia das Mães, Dia dos Pais, Ano-Novo e outros.</p></div></li>
+        <li><div><h3>Guardar e mandar</h3><p>Um toque no coração e a mensagem fica guardada para reler. Um toque em ENVIAR e ela vira uma imagem pronta para o WhatsApp.</p></div></li>
+        <li><div><h3>Do seu jeito de crer</h3><p>Uma parte própria para quem é católico e outra para quem é evangélico. Veja abaixo.</p></div></li>
+      </ol>
+    </div>
+  </section>
 
-<h2 id="privacidade">Política de Privacidade</h2>
-<p class="data">Versão 1.0 — vigente desde 13 de setembro de 2026.</p>
+  <!-- 4. As duas tradições -->
+  <section class="secao secao-alt" id="tradicoes">
+    <div class="container">
+      <h2>Duas tradições, sem misturar</h2>
+      <p class="secao-intro">Na primeira vez que abre o aplicativo, a pessoa escolhe como vive a fé. O versículo, a reflexão e a oração da manhã são para os dois. O resto muda de um lado para o outro, e dá para trocar depois, nos Ajustes.</p>
+      <ul class="tradicoes">
+        <li class="tradicao-card tradicao-catolico">
+          <p class="tradicao-numero">01</p>
+          <p class="tradicao-para">Para quem é católico</p>
+          <h3>Acompanhe o calendário da Igreja, dia a dia</h3>
+          <p>A cor do tempo litúrgico em cada tela, o Santo do dia com a história e uma frase dele, e o Terço rezado com a voz, com as contas acendendo uma a uma.</p>
+          <p class="tradicao-previa">Santo do dia · Terço guiado com os mistérios do dia · e mais 4</p>
+          <a class="botao botao-secundario" href="/catolico/">Saiba mais</a>
+        </li>
+        <li class="tradicao-card tradicao-evangelico">
+          <p class="tradicao-numero">02</p>
+          <p class="tradicao-para">Para quem é evangélico</p>
+          <h3>Comece o dia com a Palavra e um hino</h3>
+          <p>O Hino do dia com a letra na tela e orações guiadas passo a passo, com a voz lendo junto. Imagens de paisagem e a mesma tela creme o ano todo.</p>
+          <p class="tradicao-previa">Hino do dia · Pai Nosso guiado · e mais 3</p>
+          <a class="botao botao-secundario" href="/evangelico/">Saiba mais</a>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-<h3>Resumo em uma frase</h3>
-<div class="destaque">
-  O Manhã de Fé <strong>não coleta, não envia e não vende nenhum dado pessoal</strong>.
-  Tudo o que você informa fica guardado apenas no seu próprio aparelho.
-</div>
+  <!-- 5. Amostra grátis: um cartão de verdade -->
+  <section class="secao" id="cartao">
+    <div class="container amostra-grade amostra" data-amostra data-tradicao-atual="catolico">
+      <div>
+        <h2>Veja um cartão de verdade</h2>
+        <p>Este é um cartão do aplicativo, com o texto e a voz de verdade. Escolha a sua tradição e aperte <strong>Ouvir</strong>.</p>
+        <div class="escolha" role="group" aria-label="Tradição do exemplo">
+          <button class="botao-tradicao" type="button" data-escolher="catolico" aria-pressed="true">Sou católico</button>
+          <button class="botao-tradicao" type="button" data-escolher="evangelico" aria-pressed="false">Sou evangélico</button>
+        </div>
+        <ul class="muda-lista" data-so="catolico">
+          <li>A faixa de cima tem a cor do tempo litúrgico: verde no Tempo Comum.</li>
+          <li>A imagem é arte sacra clássica.</li>
+          <li>A voz lê o versículo, a reflexão e a oração.</li>
+        </ul>
+        <ul class="muda-lista" data-so="evangelico">
+          <li>A tela fica creme o ano todo, sem calendário litúrgico.</li>
+          <li>A imagem é uma pintura de paisagem.</li>
+          <li>A voz lê o versículo, a reflexão e a oração.</li>
+        </ul>
+        <p class="nota">A voz é sintética, feita por computador. Não é a gravação de um padre ou de um pastor.</p>
+        <p class="nota">No aplicativo, o cartão também traz uma música e os botões Guardar e Enviar.</p>
+      </div>
+      <article class="cartao" data-cartao data-tradicao-atual="catolico" aria-label="Exemplo de cartão do dia">
+        <div class="cartao-faixa" aria-hidden="true"></div>
+        <div class="cartao-corpo">
+          <p class="cartao-bomdia">Bom dia.</p>
+          <p class="cartao-tempo" data-so="catolico">Tempo Comum</p>
+          <img class="cartao-imagem" data-so="catolico" src="/midia/amostra-bloch.webp" srcset="/midia/amostra-bloch-480.webp 480w, /midia/amostra-bloch.webp 800w" sizes="(max-width: 560px) 90vw, 470px" width="800" height="1000" loading="lazy" alt="Pintura Cristo Consolador, de Carl Bloch: Jesus de braços abertos acolhe pessoas aflitas">
+          <p class="cartao-credito" data-so="catolico">Carl Bloch, Cristo Consolador (1875), domínio público</p>
+          <img class="cartao-imagem" data-so="evangelico" src="/midia/amostra-oleo.webp" srcset="/midia/amostra-oleo-480.webp 480w, /midia/amostra-oleo.webp 800w" sizes="(max-width: 560px) 90vw, 470px" width="800" height="1000" loading="lazy" alt="Pintura a óleo: janela aberta ao amanhecer, com uma xícara de café e um pão sobre a mesa">
+          <blockquote class="cartao-versiculo"><p>“O Senhor é o meu pastor; nada me faltará.”</p><cite>Salmo 23,1</cite></blockquote>
+          <div class="player">
+            <div class="player-barra" aria-hidden="true"><div class="player-progresso" data-progresso></div></div>
+            <p class="player-tempo" data-tempo>0:00 de 0:32</p>
+            <button class="botao botao-ouvir" type="button" data-ouvir>
+              <svg class="icone-ouvir" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              <svg class="icone-pausar" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
+              <span data-rotulo-ouvir>Ouvir</span>
+            </button>
+            <audio data-audio="catolico" data-duracao="32" preload="none" src="/midia/narracao-catolico.m4a"></audio>
+            <audio data-audio="evangelico" data-duracao="30" preload="none" src="/midia/narracao-evangelico.m4a"></audio>
+          </div>
+          <p class="cartao-reflexao">Você acorda hoje com a lista do que falta. Este versículo vira a lista ao contrário: o que você tem é um Pastor que já vai na frente. Não é promessa de dia fácil, é promessa de companhia. Caminhe devagar, Ele conhece o caminho.</p>
+          <p class="cartao-oracao-rotulo">Oração</p>
+          <p class="cartao-oracao">Senhor, sê o meu pastor também hoje. Guia os meus passos e acalma o meu coração. Amém.</p>
+          <p class="cartao-marca">Manhã de Fé</p>
+        </div>
+      </article>
+    </div>
+  </section>
 
-<h3>1. Quem é o responsável</h3>
-<p>O responsável pelo aplicativo e pelo tratamento de dados, nos termos da Lei
-Geral de Proteção de Dados (Lei nº 13.709/2018), é a ÁUREA EDUCACIONAL,
-inscrita no CNPJ 67.140.776/0001-88, que pode ser contatada pelo e-mail
-<a href="mailto:contato@manhadefe.com.br">contato@manhadefe.com.br</a>.</p>
+  <!-- 6. Como funciona -->
+  <section class="secao secao-alt" id="como-funciona">
+    <div class="container">
+      <h2>Como funciona</h2>
+      <div class="passos">
+        <div class="passo">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 7a10 10 0 0 0-10 10v8l-4 6h28l-4-6v-8A10 10 0 0 0 24 7z"/><path d="M20 35a4 4 0 0 0 8 0"/></svg>
+          <h3>Abrir</h3>
+          <p>O aviso chega no horário que você escolheu. Um toque e o cartão abre, sem menu para procurar.</p>
+        </div>
+        <div class="passo">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19h7l9-7v24l-9-7H9z"/><path d="M31 18a8 8 0 0 1 0 12"/><path d="M35.5 13a15 15 0 0 1 0 22"/></svg>
+          <h3>Ouvir</h3>
+          <p>A voz lê o versículo, a reflexão e a oração. Um botão grande pausa na hora.</p>
+        </div>
+        <div class="passo">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 38S11 30 11 20a7 7 0 0 1 13-3.6A7 7 0 0 1 37 20c0 10-13 18-13 18z"/></svg>
+          <h3>Guardar</h3>
+          <p>Gostou? Um toque no coração e a mensagem fica guardada para reler.</p>
+        </div>
+        <div class="passo">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M41 7 7 20.5l13.5 5.5L26 40z"/><path d="M20.5 26 41 7"/></svg>
+          <h3>Mandar</h3>
+          <p>O botão ENVIAR monta uma imagem com o versículo, pronta para o WhatsApp da família.</p>
+        </div>
+      </div>
+      <h3 class="recebe-titulo">O que você recebe</h3>
+      <ul class="recebe">
+        <li><strong>1</strong><span>mensagem por manhã, sorteada para você: a sua não é igual à do seu irmão, e vocês podem trocar cartões.</span></li>
+        <li><strong>3</strong><span>tamanhos de letra no botão A+, além da letra que você já aumentou no celular.</span></li>
+        <li><strong>1</strong><span>aviso por dia, no horário que você escolher.</span></li>
+        <li><strong>0</strong><span>propaganda, nenhuma senha e nenhum dado seu enviado para nós: tudo fica no seu celular.</span></li>
+      </ul>
+      <p style="margin-top:22px">E funciona sem internet depois de instalado.</p>
+    </div>
+  </section>
 
-<h3>2. Que informações o aplicativo guarda</h3>
-<p>O aplicativo guarda, <strong>somente na memória do seu aparelho</strong>:</p>
-<ul>
-  <li>o nome que você digita na primeira abertura, usado apenas para escrever
-      "Bom dia, Fulano" na tela e no aviso do celular;</li>
-  <li>a tradição que você escolhe (católica ou evangélica);</li>
-  <li>o horário em que você quer receber o aviso diário;</li>
-  <li>as preferências de leitura, como o tamanho da letra e se a narração
-      começa sozinha;</li>
-  <li>a lista de mensagens que você guardou tocando no coração;</li>
-  <li>um número aleatório, criado na primeira abertura, que serve para
-      embaralhar as mensagens do ano de um jeito diferente para cada pessoa.</li>
-</ul>
-<p>Essas informações nunca saem do aparelho. Nós não temos servidor, não temos
-banco de dados de usuários e não temos como ver nada disso. Se você desinstalar
-o aplicativo, tudo é apagado junto.</p>
+  <!-- 7. Preço -->
+  <section class="secao" id="preco">
+    <div class="container preco-grade">
+      <div>
+        <h2>Quanto custa</h2>
+        <p class="preco-destaque"><span data-dias>7</span> dias grátis. Depois, <span data-preco>R$ 9,90</span> por ano.</p>
+        <p class="preco-mes">Menos de R$ 1 por mês.</p>
+        <div class="caixa-renova"><p><strong>A assinatura renova sozinha a cada ano</strong>, pela loja do seu celular, até você cancelar.</p></div>
+        <p><strong>Antes de começar:</strong> a loja pede um cartão, ou outra forma de pagamento da sua conta Google ou Apple, para liberar os dias grátis. Nada é cobrado nesses <span data-dias>7</span> dias.</p>
+        <p><strong>Não quis?</strong> Cancele antes de terminarem os <span data-dias>7</span> dias e não paga nada.</p>
+        <h3>Como cancelar pelo celular</h3>
+        <div class="cancelar">
+          <div>
+            <h4>No iPhone</h4>
+            <p>Abra o app Ajustes › toque no seu nome › Assinaturas › Manhã de Fé › Cancelar assinatura.</p>
+          </div>
+          <div>
+            <h4>No Android</h4>
+            <p>Abra a Play Store › toque na sua foto, no alto › Pagamentos e assinaturas › Assinaturas › Manhã de Fé › Cancelar assinatura.</p>
+          </div>
+        </div>
+        <p class="nota">O pagamento é feito só pela Google Play ou pela App Store. Este site não vende nem cobra nada.</p>
+      </div>
+      <div class="baixar" data-baixar>
+        <noscript><p>Para baixar, abra <a href="/baixar/">manhadefe.com.br/baixar</a> no celular.</p></noscript>
+      </div>
+    </div>
+  </section>
 
-<h3>3. O que o aplicativo NÃO faz</h3>
-<ul>
-  <li>Não pede cadastro, login ou senha.</li>
-  <li>Não pede e-mail, telefone, CPF, endereço, localização, contatos, fotos,
-      câmera ou microfone.</li>
-  <li>Não tem publicidade.</li>
-  <li>Não usa ferramentas de análise de uso, rastreamento ou perfil
-      publicitário.</li>
-  <li>Não compartilha dados com terceiros para fins comerciais.</li>
-</ul>
+  <!-- 8. Perguntas frequentes -->
+  <section class="secao secao-alt" id="perguntas">
+    <div class="container">
+      <h2>Perguntas frequentes</h2>
+      <div class="faq">
+        <details>
+          <summary>É para católico ou evangélico?</summary>
+          <p>Para os dois, sem misturar. Na primeira vez o aplicativo pergunta como você vive sua fé. Quem é católico recebe também a cor do tempo litúrgico, o Santo do dia, o Terço guiado e arte sacra. Quem é evangélico recebe o Hino do dia, orações guiadas e imagens de paisagem. O versículo, a reflexão e a oração da manhã são para todos. Dá para trocar depois, nos Ajustes.</p>
+        </details>
+        <details>
+          <summary>Precisa de cartão de crédito?</summary>
+          <p>A loja pede um cartão, ou outra forma de pagamento cadastrada na sua conta Google ou Apple, para liberar os <span data-dias>7</span> dias grátis. Nesses dias nada é cobrado.</p>
+        </details>
+        <details>
+          <summary>Como eu cancelo?</summary>
+          <p>Pelo próprio celular, na loja. No iPhone: app Ajustes, toque no seu nome, depois Assinaturas. No Android: Play Store, toque na sua foto no alto, depois Pagamentos e assinaturas, e Assinaturas. Cancelando antes de terminarem os <span data-dias>7</span> dias grátis, você não paga nada. Apagar o aplicativo não cancela a assinatura.</p>
+        </details>
+        <details>
+          <summary>Quanto custa depois dos dias grátis?</summary>
+          <p><span data-preco>R$ 9,90</span> por ano, cobrados pela loja quando terminam os <span data-dias>7</span> dias e renovados automaticamente a cada ano, até você cancelar.</p>
+        </details>
+        <details>
+          <summary>A letra é grande mesmo?</summary>
+          <p>É. A letra já começa grande, o botão A+ aumenta em mais dois tamanhos, e o aplicativo respeita a letra que você já aumentou no celular. Os botões são grandes e todos têm desenho e palavra.</p>
+        </details>
+        <details>
+          <summary>Tem áudio?</summary>
+          <p>Tem. Uma voz lê o versículo, a reflexão e a oração, e há uma música para ouvir. A leitura pode começar sozinha ao abrir o cartão ou só quando você apertar OUVIR: você escolhe nos Ajustes. A voz é sintética, feita por computador.</p>
+        </details>
+        <details id="pergunta-pais">
+          <summary>Dá para instalar no celular dos meus pais?</summary>
+          <p><span class="so-lojas">Dá. Abra esta página no seu computador e peça para eles apontarem a câmera do celular deles para o código que aparece em "Baixar". O celular abre a loja certa sozinho, Android ou iPhone.</span><span class="so-pre">Dá. Quando o aplicativo estiver na loja, esta página vai mostrar um código para eles apontarem a câmera do celular: o celular abre a loja certa sozinho, Android ou iPhone.</span> A assinatura fica na conta da loja do celular deles, com a forma de pagamento cadastrada ali.</p>
+        </details>
+        <details>
+          <summary>Como mando o cartão para a família?</summary>
+          <p>Toque em ENVIAR. O aplicativo monta uma imagem com o versículo e abre a lista de conversas do celular, com o WhatsApp e os grupos. Você vê a imagem antes de mandar.</p>
+        </details>
+        <details>
+          <summary>A mensagem é igual para todo mundo?</summary>
+          <p>Nos dias de festa, como Natal e Páscoa, é igual para todos. Nos outros dias, o aplicativo sorteia a ordem das mensagens para cada pessoa: a sua não é igual à do seu irmão, e vocês podem trocar cartões.</p>
+        </details>
+        <details>
+          <summary>Funciona no Android e no iPhone?</summary>
+          <p data-texto-plataformas>Sim, nos dois. O Android chega primeiro às lojas e o iPhone logo depois: deixe seu e-mail em "Me avise" e mandamos um aviso.</p>
+        </details>
+        <details>
+          <summary>Precisa de internet?</summary>
+          <p>Só para baixar. Depois de instalado, funciona sem internet.</p>
+        </details>
+        <details>
+          <summary>Precisa criar conta ou senha?</summary>
+          <p>Não. O aplicativo não pede e-mail, telefone, CPF nem senha, e não coleta nenhum dado seu: o que você escolhe fica guardado só no seu celular. Veja a <a href="/privacidade/">política de privacidade</a>.</p>
+        </details>
+        <details>
+          <summary>Tem propaganda?</summary>
+          <p>Não. Nenhuma.</p>
+        </details>
+        <details>
+          <summary>Tem suporte?</summary>
+          <p>Tem, por e-mail: <a href="mailto:contato@manhadefe.com.br">contato@manhadefe.com.br</a>. Respondemos em até 2 dias úteis.</p>
+        </details>
+      </div>
+    </div>
+  </section>
 
-<h3>4. Assinatura e pagamento</h3>
-<p>A assinatura é vendida e cobrada pela loja de onde você instalou o aplicativo
-— Google Play ou App Store. Os dados de pagamento são tratados por elas, e nós
-não temos acesso ao número do seu cartão nem aos seus dados bancários. O
-aplicativo apenas pergunta à loja se existe uma assinatura ativa para aquele
-aparelho. Para saber como essas empresas tratam seus dados, consulte as
-políticas de privacidade do Google e da Apple.</p>
+  <!-- 9. De graça, sem cadastro -->
+  <section class="secao" id="versiculos">
+    <div class="container">
+      <h2>Mande um versículo hoje</h2>
+      <p class="secao-intro">Sete cartões prontos para mandar para a família. De graça, sem cadastro, direto daqui.</p>
+      <ul class="versiculos">
+        <li class="versiculo" data-versiculo data-texto="O choro pode durar uma noite, mas a alegria vem pela manhã." data-ref="Salmo 30,5">
+          <svg class="sol" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 34a10 10 0 0 1 20 0z" fill="#C8952E"/><g fill="none" stroke="#C8952E" stroke-width="3" stroke-linecap="round"><path d="M24 11v5"/><path d="M12.5 16.5l3.4 3.4"/><path d="M35.5 16.5l-3.4 3.4"/><path d="M6 27h4.5"/><path d="M37.5 27H42"/></g><path d="M7 34.5h34" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round"/></svg>
+          <blockquote><p>“O choro pode durar uma noite, mas a alegria vem pela manhã.”</p><cite>Salmo 30,5</cite></blockquote>
+          <button class="botao botao-principal" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M7 8l5-5 5 5"/></svg><span data-rotulo>Mandar para a família</span></button>
+          <p class="versiculo-status" role="status" aria-live="polite"></p>
+        </li>
+        <li class="versiculo" data-versiculo data-texto="O Senhor é o meu pastor; nada me faltará." data-ref="Salmo 23,1">
+          <svg class="sol" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 34a10 10 0 0 1 20 0z" fill="#C8952E"/><g fill="none" stroke="#C8952E" stroke-width="3" stroke-linecap="round"><path d="M24 11v5"/><path d="M12.5 16.5l3.4 3.4"/><path d="M35.5 16.5l-3.4 3.4"/><path d="M6 27h4.5"/><path d="M37.5 27H42"/></g><path d="M7 34.5h34" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round"/></svg>
+          <blockquote><p>“O Senhor é o meu pastor; nada me faltará.”</p><cite>Salmo 23,1</cite></blockquote>
+          <button class="botao botao-principal" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M7 8l5-5 5 5"/></svg><span data-rotulo>Mandar para a família</span></button>
+          <p class="versiculo-status" role="status" aria-live="polite"></p>
+        </li>
+        <li class="versiculo" data-versiculo data-texto="Entrega o teu caminho ao Senhor; confia nele, e ele o fará." data-ref="Salmo 37,5">
+          <svg class="sol" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 34a10 10 0 0 1 20 0z" fill="#C8952E"/><g fill="none" stroke="#C8952E" stroke-width="3" stroke-linecap="round"><path d="M24 11v5"/><path d="M12.5 16.5l3.4 3.4"/><path d="M35.5 16.5l-3.4 3.4"/><path d="M6 27h4.5"/><path d="M37.5 27H42"/></g><path d="M7 34.5h34" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round"/></svg>
+          <blockquote><p>“Entrega o teu caminho ao Senhor; confia nele, e ele o fará.”</p><cite>Salmo 37,5</cite></blockquote>
+          <button class="botao botao-principal" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M7 8l5-5 5 5"/></svg><span data-rotulo>Mandar para a família</span></button>
+          <p class="versiculo-status" role="status" aria-live="polite"></p>
+        </li>
+        <li class="versiculo" data-versiculo data-texto="E eis que estou contigo, e te guardarei por onde quer que fores." data-ref="Gênesis 28,15">
+          <svg class="sol" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 34a10 10 0 0 1 20 0z" fill="#C8952E"/><g fill="none" stroke="#C8952E" stroke-width="3" stroke-linecap="round"><path d="M24 11v5"/><path d="M12.5 16.5l3.4 3.4"/><path d="M35.5 16.5l-3.4 3.4"/><path d="M6 27h4.5"/><path d="M37.5 27H42"/></g><path d="M7 34.5h34" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round"/></svg>
+          <blockquote><p>“E eis que estou contigo, e te guardarei por onde quer que fores.”</p><cite>Gênesis 28,15</cite></blockquote>
+          <button class="botao botao-principal" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M7 8l5-5 5 5"/></svg><span data-rotulo>Mandar para a família</span></button>
+          <p class="versiculo-status" role="status" aria-live="polite"></p>
+        </li>
+        <li class="versiculo" data-versiculo data-texto="Não vos entristeçais, porque a alegria do Senhor é a vossa força." data-ref="Neemias 8,10">
+          <svg class="sol" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 34a10 10 0 0 1 20 0z" fill="#C8952E"/><g fill="none" stroke="#C8952E" stroke-width="3" stroke-linecap="round"><path d="M24 11v5"/><path d="M12.5 16.5l3.4 3.4"/><path d="M35.5 16.5l-3.4 3.4"/><path d="M6 27h4.5"/><path d="M37.5 27H42"/></g><path d="M7 34.5h34" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round"/></svg>
+          <blockquote><p>“Não vos entristeçais, porque a alegria do Senhor é a vossa força.”</p><cite>Neemias 8,10</cite></blockquote>
+          <button class="botao botao-principal" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M7 8l5-5 5 5"/></svg><span data-rotulo>Mandar para a família</span></button>
+          <p class="versiculo-status" role="status" aria-live="polite"></p>
+        </li>
+        <li class="versiculo" data-versiculo data-texto="Porque ele disse: Não te deixarei, nem te desampararei." data-ref="Hebreus 13,5">
+          <svg class="sol" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 34a10 10 0 0 1 20 0z" fill="#C8952E"/><g fill="none" stroke="#C8952E" stroke-width="3" stroke-linecap="round"><path d="M24 11v5"/><path d="M12.5 16.5l3.4 3.4"/><path d="M35.5 16.5l-3.4 3.4"/><path d="M6 27h4.5"/><path d="M37.5 27H42"/></g><path d="M7 34.5h34" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round"/></svg>
+          <blockquote><p>“Porque ele disse: Não te deixarei, nem te desampararei.”</p><cite>Hebreus 13,5</cite></blockquote>
+          <button class="botao botao-principal" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M7 8l5-5 5 5"/></svg><span data-rotulo>Mandar para a família</span></button>
+          <p class="versiculo-status" role="status" aria-live="polite"></p>
+        </li>
+        <li class="versiculo" data-versiculo data-texto="Até aqui nos ajudou o Senhor." data-ref="1 Samuel 7,12">
+          <svg class="sol" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 34a10 10 0 0 1 20 0z" fill="#C8952E"/><g fill="none" stroke="#C8952E" stroke-width="3" stroke-linecap="round"><path d="M24 11v5"/><path d="M12.5 16.5l3.4 3.4"/><path d="M35.5 16.5l-3.4 3.4"/><path d="M6 27h4.5"/><path d="M37.5 27H42"/></g><path d="M7 34.5h34" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round"/></svg>
+          <blockquote><p>“Até aqui nos ajudou o Senhor.”</p><cite>1 Samuel 7,12</cite></blockquote>
+          <button class="botao botao-principal" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M7 8l5-5 5 5"/></svg><span data-rotulo>Mandar para a família</span></button>
+          <p class="versiculo-status" role="status" aria-live="polite"></p>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-<h3>5. Avisos no celular</h3>
-<p>O aviso diário é gerado pelo próprio aparelho, no horário que você escolheu.
-Não usamos serviço de notificação em nuvem: nenhuma mensagem sai de um servidor
-nosso para o seu celular, porque não existe servidor nosso.</p>
+  <!-- 10. Download no fim -->
+  <section class="secao secao-alt" id="comecar">
+    <div class="container preco-grade">
+      <div>
+        <h2>Comece amanhã de manhã</h2>
+        <p class="so-lojas">Instale hoje, escolha o horário do aviso e amanhã a primeira mensagem já estará esperando por você.</p>
+        <p class="so-lojas">Para instalar no celular de alguém da família, abra esta página no computador e peça para a pessoa apontar a câmera do celular para o código.</p>
+        <p class="so-pre">Deixe seu e-mail e avisamos no dia em que der para instalar. Depois é só escolher o horário do aviso e esperar a primeira manhã.</p>
+      </div>
+      <div class="baixar" data-baixar>
+        <noscript><p>Para baixar, abra <a href="/baixar/">manhadefe.com.br/baixar</a> no celular.</p></noscript>
+      </div>
+    </div>
+  </section>
 
-<h3>6. Quando você compartilha uma mensagem</h3>
-<p>Ao tocar em ENVIAR, o aplicativo cria uma imagem com o versículo e entrega
-essa imagem ao aplicativo que você escolher na tela de compartilhamento (por
-exemplo, o WhatsApp). A partir daí, valem as regras do aplicativo escolhido por
-você. Nada é enviado sem essa sua ação.</p>
+  <!-- 11. Fale com a gente -->
+  <section class="secao" id="contato">
+    <div class="container">
+      <div class="contato-caixa">
+        <h2>Fale com a gente</h2>
+        <p>Dúvida para instalar, sobre a assinatura ou uma sugestão: escreva para nós. Respondemos em até 2 dias úteis.</p>
+        <a class="botao botao-principal" href="mailto:contato@manhadefe.com.br"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg>Escrever um e&#8209;mail</a>
+        <p class="email-grande">contato@<wbr>manhadefe.com.br</p>
+        <p class="nota">O atendimento é só por e-mail.</p>
+      </div>
+    </div>
+  </section>
+</main>
 
-<h3>7. Informações técnicas do aparelho</h3>
-<p>Para mostrar a instrução certa de economia de bateria durante a configuração
-inicial, o aplicativo consulta a marca do aparelho (por exemplo, Xiaomi,
-Samsung ou Motorola). Essa consulta é feita no próprio aparelho e o resultado
-não é guardado nem transmitido.</p>
-
-<h3>8. Crianças</h3>
-<p>O aplicativo é destinado ao público adulto. Não coletamos dados de ninguém,
-e portanto também não coletamos dados de crianças ou adolescentes.</p>
-
-<h3>9. Seus direitos</h3>
-<p>A LGPD garante a você o direito de confirmar, acessar, corrigir, portar ou
-eliminar dados pessoais tratados por uma empresa. Como não tratamos nenhum dado
-pessoal seu fora do seu aparelho, não temos nada para entregar, corrigir ou
-apagar a seu pedido: o controle é inteiramente seu. Para apagar as informações
-guardadas no aparelho, basta desinstalar o aplicativo ou limpar os dados dele
-nas configurações do sistema. Se ainda assim quiser exercer algum direito ou
-tirar uma dúvida sobre este texto, escreva para
-<a href="mailto:contato@manhadefe.com.br">contato@manhadefe.com.br</a>.</p>
-
-<h3>10. Segurança</h3>
-<p>Como nenhuma informação é transmitida pela internet, não há risco de
-interceptação de dados seus por causa do aplicativo. As informações guardadas
-ficam protegidas pelos mecanismos do próprio sistema do celular.</p>
-
-<h3>11. Mudanças nesta política</h3>
-<p>Se um dia o aplicativo passar a tratar algum dado — por exemplo, se ganhar
-uma conta para sincronizar as mensagens guardadas entre aparelhos — esta
-política será atualizada antes da mudança entrar no ar, com nova data de
-vigência, e o aviso aparecerá no próprio aplicativo. Versões anteriores ficam
-disponíveis mediante pedido pelo e-mail de contato.</p>
-
-<footer>
-  Manhã de Fé · ÁUREA EDUCACIONAL · CNPJ 67.140.776/0001-88 ·
-  <a href="mailto:contato@manhadefe.com.br">contato@manhadefe.com.br</a>
+<footer class="rodape">
+  <div class="container rodape-grade">
+    <div>
+      <p class="rodape-marca">Manhã de Fé</p>
+      <p>Um aplicativo da <strong>AUREA EDUCACIONAL LTDA</strong><br>CNPJ 67.140.776/0001-88<br>Rua Pedro Vieira da Silva, 64 — Jardim Santa Genebra<br>Campinas/SP — CEP 13.080-570</p>
+      <p>E-mail: <a href="mailto:contato@manhadefe.com.br">contato@manhadefe.com.br</a></p>
+    </div>
+    <nav aria-label="Documentos">
+      <ul class="rodape-links">
+        <li><a href="/termos/">Termos de uso</a></li>
+        <li><a href="/privacidade/">Política de privacidade do aplicativo</a></li>
+        <li><a href="/privacidade-do-site/">Privacidade deste site</a></li>
+        <li><a href="/catolico/">Manhã de Fé para católicos</a></li>
+        <li><a href="/evangelico/">Manhã de Fé para evangélicos</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container rodape-fim">
+    <p>Google Play e o logotipo do Google Play são marcas da Google LLC. Apple e o logotipo da Apple são marcas da Apple Inc., registradas nos EUA e em outros países. App Store é uma marca de serviço da Apple Inc.</p>
+    <p>© 2026 Manhã de Fé · AUREA EDUCACIONAL LTDA · Este site não usa cookies.</p>
+  </div>
 </footer>
-
-</div>
 </body>
 </html>

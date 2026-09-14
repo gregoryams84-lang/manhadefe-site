@@ -1,0 +1,10 @@
+Códigos QR de impressão do Manhã de Fé (gerados por ferramentas/gerar-qr.mjs)
+Tamanho mínimo impresso: 2,5 cm de lado, contando a borda clara. Não corte a borda.
+
+santinho	https://manhadefe.com.br/baixar/?origem=santinho&meio=qr	33 módulos
+impresso	https://manhadefe.com.br/baixar/?origem=impresso&meio=qr	33 módulos
+facebook	https://manhadefe.com.br/baixar/?origem=facebook&meio=qr	33 módulos
+instagram	https://manhadefe.com.br/baixar/?origem=instagram&meio=qr	33 módulos
+tiktok	https://manhadefe.com.br/baixar/?origem=tiktok&meio=qr	33 módulos
+youtube	https://manhadefe.com.br/baixar/?origem=youtube&meio=qr	33 módulos
+whatsapp	https://manhadefe.com.br/baixar/?origem=whatsapp&meio=qr	33 módulos

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /baixar/
+
+Sitemap: https://manhadefe.com.br/sitemap.xml
