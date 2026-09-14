@@ -106,7 +106,8 @@
         return navigator.share({
           files: [arquivo],
           title: 'Manhã de Fé',
-          text: 'Um versículo para hoje. ' + SITE + '/?origem=versiculo'
+          text: 'Um versículo para hoje, do Manhã de Fé. Toda manhã chega uma palavra assim no celular, com letra grande e uma voz que lê. Experimente ' +
+            ((window.MDF_CONFIG && window.MDF_CONFIG.diasGratis) || 7) + ' dias grátis: ' + SITE + '/?origem=versiculo'
         }).catch(function () { /* a pessoa fechou a partilha: nada a fazer */ });
       }
       var a = document.createElement('a');
