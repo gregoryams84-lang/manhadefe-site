@@ -80,7 +80,7 @@
         <h2>Veja um cartão de verdade</h2>
         <p>Este é um cartão do aplicativo, como aparece para quem escolhe Católico, com o texto e a voz de verdade. A faixa verde é a cor do Tempo Comum. Aperte <strong>Ouvir</strong>.</p>
         <p class="nota">A voz é sintética, feita por computador. Não é a gravação de um padre.</p>
-        <p class="nota">No aplicativo, o cartão também traz uma música e os botões Guardar e Enviar.</p>
+        <p class="nota">No aplicativo, o cartão também traz os botões Guardar e Enviar.</p>
       </div>
       <article class="cartao" data-cartao data-tradicao-atual="catolico" aria-label="Exemplo de cartão do dia">
         <div class="cartao-faixa" aria-hidden="true"></div>
@@ -92,17 +92,27 @@
           <blockquote class="cartao-versiculo"><p>“O Senhor é o meu pastor; nada me faltará.”</p><cite>Salmo 23,1</cite></blockquote>
           <div class="player">
             <div class="player-barra" aria-hidden="true"><div class="player-progresso" data-progresso></div></div>
-            <p class="player-tempo" data-tempo>0:00 de 0:32</p>
+            <p class="player-tempo" data-tempo>0:00 de 0:39</p>
             <button class="botao botao-ouvir" type="button" data-ouvir>
               <svg class="icone-ouvir" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
               <svg class="icone-pausar" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
               <span data-rotulo-ouvir>Ouvir</span>
             </button>
-            <audio data-audio="catolico" data-duracao="32" preload="none" src="/midia/narracao-catolico.m4a"></audio>
+            <audio data-audio="catolico" data-duracao="39" preload="none" src="/midia/narracao-catolico-calma.m4a"></audio>
           </div>
           <p class="cartao-reflexao">Você acorda hoje com a lista do que falta. Este versículo vira a lista ao contrário: o que você tem é um Pastor que já vai na frente. Não é promessa de dia fácil, é promessa de companhia. Caminhe devagar, Ele conhece o caminho.</p>
           <p class="cartao-oracao-rotulo">Oração</p>
           <p class="cartao-oracao">Senhor, sê o meu pastor também hoje. Guia os meus passos e acalma o meu coração. Amém.</p>
+          <div class="musica">
+            <button class="botao botao-musica" type="button" data-ouvir-musica>
+              <svg class="icone-musica" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+              <svg class="icone-pausar" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
+              <span data-rotulo-musica>Ouvir música</span>
+            </button>
+            <p class="musica-nome">Ave Maria · Franz Schubert</p>
+            <p class="musica-credito">Trecho de 30 segundos. Gravação: Tomaz Kovacic (barítono) e Michael Stenov (órgão), via <a href="https://imslp.org/wiki/Ave_Maria,_D.839_(Schubert,_Franz)">IMSLP</a>, licença <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br">CC BY-SA 4.0</a>.</p>
+            <audio data-musica="catolico" preload="none" src="/midia/musica-ave-maria-schubert.m4a"></audio>
+          </div>
           <p class="cartao-marca">Manhã de Fé</p>
         </div>
       </article>

@@ -342,6 +342,13 @@ html:not([data-aparelho="outro"]) .selo img { height: 80px; max-width: 100%; }
 .cartao-oracao-rotulo { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--azul); margin: 20px 0 4px; }
 .cartao-oracao { margin: 0; }
 .cartao-marca { margin: 24px 0 0; text-align: center; font-family: var(--serif); font-size: 18px; color: var(--dourado-texto); }
+.musica { margin: 24px 0 0; padding-top: 22px; border-top: 1px solid var(--linha); text-align: center; }
+.botao-musica { width: 100%; background: var(--papel); color: var(--azul); }
+.botao-musica .icone-pausar { display: none; }
+.botao-musica.tocando .icone-pausar { display: inline; }
+.botao-musica.tocando .icone-musica { display: none; }
+.musica-nome { margin: 10px 0 0; font-weight: 600; font-size: 19px; color: var(--tinta); }
+.musica-credito { margin: 6px 0 0; font-size: 18px; line-height: 1.45; color: var(--tinta-2); }
 
 /* ---------- exemplo de Santo do dia / Hino do dia ---------- */
 .exemplo {

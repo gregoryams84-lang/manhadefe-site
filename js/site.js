@@ -211,7 +211,8 @@
     });
   });
 
-  /* ---------- cartão de amostra: tradição e narração ---------- */
+  /* ---------- cartão de amostra: tradição, narração e música ----------
+     Como no app: nada toca sozinho, e narração e música nunca tocam juntas. */
   function iniciarAmostra(area) {
     var cartao = area.querySelector('[data-cartao]');
     var botao = area.querySelector('[data-ouvir]');
@@ -219,9 +220,37 @@
     var barra = area.querySelector('[data-progresso]');
     var tempo = area.querySelector('[data-tempo]');
     var escolhas = area.querySelectorAll('[data-escolher]');
+    var botaoMusica = area.querySelector('[data-ouvir-musica]');
+    var rotuloMusica = area.querySelector('[data-rotulo-musica]');
     var atual = area.getAttribute('data-tradicao-atual');
 
     function audio() { return area.querySelector('audio[data-audio="' + atual + '"]'); }
+    function musica() { return area.querySelector('audio[data-musica="' + atual + '"]'); }
+    function pintarMusica() {
+      var m = botaoMusica && musica();
+      if (!m) return;
+      botaoMusica.classList.toggle('tocando', !m.paused);
+      rotuloMusica.textContent = !m.paused ? 'Pausar música' : (m.ended ? 'Ouvir a música de novo' : 'Ouvir música');
+    }
+    area.querySelectorAll('audio[data-musica]').forEach(function (m) {
+      ['play', 'pause', 'ended'].forEach(function (ev) { m.addEventListener(ev, pintarMusica); });
+      m.addEventListener('play', function () { area.querySelectorAll('audio[data-audio]').forEach(function (a) { a.pause(); }); });
+    });
+    area.querySelectorAll('audio[data-audio]').forEach(function (a) {
+      a.addEventListener('play', function () { area.querySelectorAll('audio[data-musica]').forEach(function (m) { m.pause(); }); });
+    });
+    if (botaoMusica) {
+      botaoMusica.addEventListener('click', function () {
+        var m = musica();
+        if (m.paused) {
+          if (m.ended) m.currentTime = 0;
+          var p = m.play();
+          if (p && p.catch) p.catch(pintarMusica);
+        } else {
+          m.pause();
+        }
+      });
+    }
     function fmt(s) {
       s = Math.max(0, Math.round(s || 0));
       return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
@@ -235,7 +264,7 @@
       botao.classList.toggle('tocando', !a.paused);
       rotulo.textContent = !a.paused ? 'Pausar' : (fim ? 'Ouvir de novo' : 'Ouvir');
     }
-    area.querySelectorAll('audio').forEach(function (a) {
+    area.querySelectorAll('audio[data-audio]').forEach(function (a) {
       ['timeupdate', 'play', 'pause', 'ended', 'loadedmetadata'].forEach(function (ev) {
         a.addEventListener(ev, function () { if (a === audio()) pintar(); });
       });
@@ -258,9 +287,11 @@
         cartao.setAttribute('data-tradicao-atual', atual);
         escolhas.forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
         pintar();
+        pintarMusica();
       });
     });
     pintar();
+    pintarMusica();
   }
   document.querySelectorAll('[data-amostra]').forEach(iniciarAmostra);
 
