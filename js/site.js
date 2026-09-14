@@ -110,7 +110,8 @@
     contador += 1;
     var id = 'email-' + contador;
     var titulo;
-    if (loja === 'ambas') titulo = 'O Manhã de Fé está chegando às lojas';
+    // Antes de qualquer loja aprovar, o título é o mesmo em todo aparelho.
+    if (loja === 'ambas' || (!noAr.android && !noAr.iphone)) titulo = 'O Manhã de Fé está chegando às lojas';
     else if (loja === 'iphone') titulo = secundario ? 'Tem iPhone? Lá ainda não saiu.' : 'No iPhone, o Manhã de Fé ainda não saiu';
     else titulo = secundario ? 'Tem Android? Lá ainda não saiu.' : 'No Android, o Manhã de Fé ainda não saiu';
     return '<form class="avise' + (secundario ? ' avise-secundario' : '') + '" data-avise data-loja="' + loja + '" novalidate>' +

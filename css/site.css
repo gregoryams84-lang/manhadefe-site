@@ -55,10 +55,12 @@ body {
   font-family: var(--sans);
   font-size: 20px;
   line-height: 1.6;
+  overflow-wrap: break-word; /* e-mail e links longos quebram em vez de vazar com a letra aumentada */
 }
 @media (min-width: 900px) { body { font-size: 21px; } }
 
 img { max-width: 100%; height: auto; display: block; }
+a[href^="mailto:"] { overflow-wrap: anywhere; }
 a { color: var(--azul); text-underline-offset: .18em; text-decoration-thickness: .08em; }
 a:hover { color: var(--azul-escuro); }
 :focus-visible { outline: 4px solid var(--dourado-texto); outline-offset: 3px; border-radius: 6px; }
@@ -149,7 +151,7 @@ html:not([data-lojas="alguma"]) .so-lojas { display: none !important; }
 
 /* ---------- promessa (primeira dobra) ---------- */
 .promessa { padding-block: clamp(36px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-.promessa-grade { display: grid; gap: 32px; }
+.promessa-grade { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
 @media (min-width: 980px) {
   .promessa-grade { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: start; gap: 56px; }
 }
@@ -224,7 +226,7 @@ html:not([data-aparelho="outro"]) .selo img { height: 80px; max-width: 100%; }
   font-family: var(--serif); font-size: clamp(25px, 2.6vw, 30px); line-height: 1.35;
   color: var(--azul); max-width: 30em; margin-bottom: .8em;
 }
-.quem-grade { display: grid; gap: 28px; }
+.quem-grade { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
 @media (min-width: 900px) { .quem-grade { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 48px; align-items: start; } }
 .caixa-cuidado {
   background: var(--papel); border: 2px solid var(--linha-forte); border-left: 8px solid var(--dourado);
@@ -288,9 +290,9 @@ html:not([data-aparelho="outro"]) .selo img { height: 80px; max-width: 100%; }
 .tema-evangelico .exemplo { border-left-color: var(--azul); }
 
 /* ---------- cartão de amostra ---------- */
-.amostra-grade { display: grid; gap: 32px; }
+.amostra-grade { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
 @media (min-width: 980px) { .amostra-grade { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 56px; align-items: start; } }
-.escolha { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 22px 0 26px; max-width: 30em; }
+.escolha { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; margin: 22px 0 26px; max-width: 30em; }
 .botao-tradicao {
   min-height: 64px; padding: 10px 12px; border-radius: 14px;
   border: 3px solid var(--azul); background: transparent; color: var(--azul);
@@ -367,7 +369,7 @@ html:not([data-aparelho="outro"]) .selo img { height: 80px; max-width: 100%; }
 .recebe strong { font-family: var(--serif); font-weight: 600; font-size: 32px; line-height: 1; color: var(--azul); }
 
 /* ---------- preço ---------- */
-.preco-grade { display: grid; gap: 32px; }
+.preco-grade { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
 @media (min-width: 980px) { .preco-grade { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 56px; align-items: start; } }
 .preco-destaque { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 3.6vw, 40px); line-height: 1.25; color: var(--azul); margin: 0 0 .25em; }
 .preco-mes { font-size: 22px; font-weight: 600; color: var(--dourado-texto); }
@@ -429,7 +431,7 @@ html:not([data-aparelho="outro"]) .selo img { height: 80px; max-width: 100%; }
 /* ---------- rodapé ---------- */
 .rodape { background: var(--azul); color: var(--creme); padding-block: 48px 56px; font-size: 18px; line-height: 1.6; }
 .rodape a { color: var(--creme); }
-.rodape-grade { display: grid; gap: 28px; }
+.rodape-grade { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
 @media (min-width: 900px) { .rodape-grade { grid-template-columns: 1.3fr 1fr; } }
 .rodape-marca { font-family: var(--serif); font-size: 28px; font-weight: 600; margin: 0 0 10px; }
 .rodape-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
