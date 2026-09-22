@@ -7,7 +7,8 @@ window.MDF_CONFIG = {
 
   // Teste grátis e preço, iguais nas duas lojas.
   diasGratis: 7,
-  preco: 'R$ 9,90',
+  preco: 'R$ 39,90',       // plano anual
+  precoMensal: 'R$ 4,50',  // plano mensal
 
   lojas: {
     android: {

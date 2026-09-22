@@ -25,7 +25,7 @@ Tudo muda em `js/config.js`:
 
 Com as duas em `false`, todo bloco de download vira "Me avise". Com uma só no
 ar, cada aparelho vê a sua situação (o Android baixa, o iPhone deixa o e-mail).
-Teste grátis (`diasGratis`) e preço também ficam ali.
+Teste grátis (`diasGratis`), preço anual (`preco`) e preço mensal (`precoMensal`) também ficam ali; o texto das páginas usa `data-preco` e `data-preco-mes`.
 
 ## De onde veio cada instalação
 

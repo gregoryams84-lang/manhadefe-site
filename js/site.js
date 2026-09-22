@@ -9,7 +9,8 @@
   var LOJAS = C.lojas || {};
   var SITE = C.site || location.origin;
   var DIAS = C.diasGratis || 7;
-  var PRECO = (C.preco || 'R$ 9,90').replace(/ /g, ' '); // "R$" nunca separa do valor
+  var PRECO = (C.preco || 'R$ 39,90').replace(/ /g, ' '); // "R$" nunca separa do valor
+  var PRECO_MES = (C.precoMensal || 'R$ 4,50').replace(/ /g, ' ');
   var raiz = document.documentElement;
 
   var TEXTO_CONSENTIMENTO = 'Quero receber um único e-mail avisando quando o Manhã de Fé estiver na loja. Depois do aviso, meu e-mail é apagado.';
@@ -64,6 +65,7 @@
   /* ---------- preço e dias em todo o site ---------- */
   document.querySelectorAll('[data-dias]').forEach(function (el) { el.textContent = DIAS; });
   document.querySelectorAll('[data-preco]').forEach(function (el) { el.textContent = PRECO; });
+  document.querySelectorAll('[data-preco-mes]').forEach(function (el) { el.textContent = PRECO_MES; });
 
   var plataformas = document.querySelector('[data-texto-plataformas]');
   if (plataformas) {
@@ -141,7 +143,7 @@
       partes.push(formAvise(faltam.length === 2 ? 'ambas' : faltam[0], noArAqui.length > 0));
     }
     partes.push('<p class="baixar-preco">' + (noArAqui.length ? '' : 'Quando sair: ') +
-      DIAS + ' dias grátis. Depois, ' + PRECO + ' por ano, com renovação automática.</p>');
+      DIAS + ' dias grátis. Depois, ' + PRECO + ' por ano ou ' + PRECO_MES + ' por mês, com renovação automática.</p>');
     el.innerHTML = partes.join('');
 
     var alvo = el.querySelector('[data-qr]');
