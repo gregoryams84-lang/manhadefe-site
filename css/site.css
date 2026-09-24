@@ -130,7 +130,7 @@ html:not([data-lojas="alguma"]) .so-lojas { display: none !important; }
   font-family: var(--serif); font-weight: 600; font-size: 28px; line-height: 1;
   color: var(--azul); text-decoration: none;
 }
-.marca svg { width: 44px; height: 44px; flex: none; }
+.marca svg, .marca-simbolo { width: 44px; height: 44px; flex: none; }
 .atalhos {
   list-style: none; margin: 0; padding: 0; width: 100%;
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;
@@ -463,3 +463,18 @@ html:not([data-aparelho="outro"]) .selo img { height: 80px; max-width: 100%; }
 /* ---------- página /baixar ---------- */
 .baixar-pagina { max-width: 34em; margin: 0 auto; padding: clamp(32px, 6vw, 72px) var(--gutter) 72px; text-align: left; }
 .baixar-pagina h1 { font-size: clamp(32px, 5vw, 44px); }
+
+/* ---------- telas reais do aplicativo ---------- */
+.telas { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.tela figure { margin: 0; }
+.tela img {
+  width: 100%; height: auto; border-radius: 20px; border: 2px solid var(--linha-forte);
+  background: var(--creme); box-shadow: 0 18px 36px -26px rgba(34, 29, 24, .55);
+}
+.tela figcaption { margin-top: 12px; font-size: 18px; line-height: 1.45; color: var(--tinta-2); }
+.tela-solta { max-width: 280px; margin: 24px 0 0; }
+.tela-solta img {
+  width: 100%; height: auto; border-radius: 20px; border: 2px solid var(--linha-forte);
+  background: var(--creme); box-shadow: 0 18px 36px -26px rgba(34, 29, 24, .55);
+}
+.tela-solta figcaption { margin-top: 12px; font-size: 18px; line-height: 1.45; color: var(--tinta-2); }

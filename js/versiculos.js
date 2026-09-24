@@ -46,20 +46,20 @@
       g.lineWidth = 4;
       g.strokeRect(48, 48, W - 96, H - 96);
 
-      // sol nascendo
+      // marca: sol dourado com raios e a colina azul na frente (logo do app)
       var cx = W / 2, cy = 300;
-      g.fillStyle = '#C8952E';
-      g.beginPath(); g.arc(cx, cy, 70, Math.PI, 0); g.closePath(); g.fill();
       g.strokeStyle = '#C8952E'; g.lineWidth = 12; g.lineCap = 'round';
       [-150, -120, -90, -60, -30].forEach(function (a) {
         var rad = a * Math.PI / 180;
         g.beginPath();
-        g.moveTo(cx + Math.cos(rad) * 100, cy + Math.sin(rad) * 100);
-        g.lineTo(cx + Math.cos(rad) * 136, cy + Math.sin(rad) * 136);
+        g.moveTo(cx + Math.cos(rad) * 104, cy + Math.sin(rad) * 104);
+        g.lineTo(cx + Math.cos(rad) * 142, cy + Math.sin(rad) * 142);
         g.stroke();
       });
+      g.fillStyle = '#C8952E';
+      g.beginPath(); g.arc(cx, cy, 72, 0, Math.PI * 2); g.fill();
       g.fillStyle = '#1E3A5F';
-      g.fillRect(cx - 170, cy + 4, 340, 8);
+      g.beginPath(); g.ellipse(cx, cy + 74, 152, 86, 0, Math.PI, Math.PI * 2); g.fill();
 
       // versículo, do maior tamanho que couber
       g.textAlign = 'center';
