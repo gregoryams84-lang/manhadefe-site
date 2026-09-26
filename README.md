@@ -38,7 +38,7 @@ Qualquer link do site aceita `?origem=` (ou `utm_source=`), por exemplo
 
 Links para a bio das redes (curtos, estáveis, já com a origem e `meio=bio`,
 caem no bloco da fila de espera / download): `manhadefe.com.br/instagram`,
-`/tiktok`, `/facebook`, `/youtube`, `/whatsapp`. Campanha: `&campanha=natal`.
+`/tiktok`, `/facebook`, `/youtube`, `/whatsapp`, `/kwai`. Campanha: `&campanha=natal`.
 
 ## QR de impressão
 
