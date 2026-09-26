@@ -48,8 +48,9 @@ Tamanho mínimo impresso: 2,5 cm, sem cortar a borda clara.
 
 ## "Me avise"
 
-Ver `apps-script/LEIA-ME.md`. Enquanto `aviseEndpoint` estiver vazio, o
-formulário abre o e-mail pronto para contato@manhadefe.com.br.
+As respostas vão para um Formulário Google (`aviseForm` em `js/config.js`;
+detalhes em `apps-script/LEIA-ME.md`). Sem `aviseForm.id`, o formulário abre
+o e-mail pronto para contato@manhadefe.com.br.
 
 ## Regras que o site não pode quebrar
 

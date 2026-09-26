@@ -22,9 +22,14 @@ window.MDF_CONFIG = {
     }
   },
 
-  // Endereço do Google Apps Script que guarda os e-mails do "Me avise"
-  // (ver apps-script/LEIA-ME.md). Vazio: o formulário abre o e-mail pronto.
-  aviseEndpoint: '',
+  // "Me avise": as respostas vão para um Formulário Google (e a planilha
+  // ligada a ele). Os códigos "entry." são os das perguntas do formulário;
+  // ver apps-script/LEIA-ME.md. Sem id: o site abre o e-mail pronto.
+  aviseForm: {
+    id: '1FAIpQLScySry7cLv_bOMWfUr6AsQ7G6uM-PvM1eyYx0-7ygKpZurI9w',
+    campos: { email: 'entry.2065457779', loja: 'entry.853952691', origem: 'entry.1846208247', autorizacao: 'entry.822905497' }
+  },
+  aviseEndpoint: '',  // alternativa: app da web do Apps Script (não usada)
 
   // Faixa de presente de Natal: aparece sozinha entre estas datas.
   natal: { de: '2026-11-15', ate: '2026-12-25' }

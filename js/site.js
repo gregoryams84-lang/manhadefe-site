@@ -191,20 +191,32 @@
     if (f.site.value) { sucesso(f, email); return; } // campo-isca preenchido: robô
 
     var loja = f.getAttribute('data-loja');
-    if (!C.aviseEndpoint) {
+    var formulario = C.aviseForm, destino = null, dados = null;
+    if (formulario && formulario.id && formulario.campos) {
+      // Formulário Google: cada resposta vira uma linha na planilha dele.
+      destino = 'https://docs.google.com/forms/d/e/' + formulario.id + '/formResponse';
+      dados = new URLSearchParams();
+      dados.set(formulario.campos.email, email);
+      dados.set(formulario.campos.loja, loja);
+      dados.set(formulario.campos.origem, origem + ' · ' + campanha + ' · ' + location.pathname);
+      dados.set(formulario.campos.autorizacao, 'sim — ' + TEXTO_CONSENTIMENTO);
+    } else if (C.aviseEndpoint) {
+      destino = C.aviseEndpoint;
+      dados = new URLSearchParams({
+        email: email, consentimento: 'sim', loja: loja, origem: origem, campanha: campanha,
+        pagina: location.pathname, texto_consentimento: TEXTO_CONSENTIMENTO
+      });
+    }
+    if (!destino) {
       var nomeLoja = loja === 'iphone' ? 'iPhone' : loja === 'android' ? 'Android' : 'Android ou iPhone';
       location.href = 'mailto:contato@manhadefe.com.br?subject=' + encodeURIComponent('Me avise quando o Manhã de Fé sair') +
         '&body=' + encodeURIComponent(TEXTO_CONSENTIMENTO + '\n\nMeu e-mail: ' + email + '\nCelular: ' + nomeLoja + '\n(origem: ' + origem + ')');
       status.textContent = 'Seu programa de e-mail vai abrir com a mensagem pronta. É só enviar. Se ele não abrir, escreva para contato@manhadefe.com.br com o assunto "Me avise".';
       return;
     }
-    var dados = new URLSearchParams({
-      email: email, consentimento: 'sim', loja: loja, origem: origem, campanha: campanha,
-      pagina: location.pathname, texto_consentimento: TEXTO_CONSENTIMENTO
-    });
     botao.disabled = true;
     botao.textContent = 'Enviando…';
-    fetch(C.aviseEndpoint, { method: 'POST', mode: 'no-cors', body: dados }).then(function () {
+    fetch(destino, { method: 'POST', mode: 'no-cors', body: dados }).then(function () {
       sucesso(f, email);
     }, function () {
       botao.disabled = false;
