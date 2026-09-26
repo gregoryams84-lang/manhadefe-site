@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
 Disallow: /baixar/
+Disallow: /instagram/
+Disallow: /tiktok/
+Disallow: /facebook/
+Disallow: /youtube/
+Disallow: /whatsapp/
 
 Sitemap: https://manhadefe.com.br/sitemap.xml

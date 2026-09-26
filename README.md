@@ -36,8 +36,9 @@ Qualquer link do site aceita `?origem=` (ou `utm_source=`), por exemplo
   (Play Console > Aquisição de usuários).
 - App Store: `ct=<origem>` (App Store Connect > Analytics > Campanhas).
 
-Links sugeridos: `?origem=facebook`, `?origem=instagram`, `?origem=tiktok`,
-`?origem=youtube`, `?origem=whatsapp`. Campanha: `&campanha=natal`.
+Links para a bio das redes (curtos, estáveis, já com a origem e `meio=bio`,
+caem no bloco da fila de espera / download): `manhadefe.com.br/instagram`,
+`/tiktok`, `/facebook`, `/youtube`, `/whatsapp`. Campanha: `&campanha=natal`.
 
 ## QR de impressão
 
