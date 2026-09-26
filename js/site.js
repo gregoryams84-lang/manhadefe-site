@@ -70,8 +70,8 @@
   var plataformas = document.querySelector('[data-texto-plataformas]');
   if (plataformas) {
     if (noAr.android && noAr.iphone) plataformas.textContent = 'Sim, nos dois: Google Play e App Store.';
-    else if (noAr.android) plataformas.textContent = 'No Android já está no Google Play. No iPhone chega logo depois: deixe seu e-mail em "Me avise" e mandamos um aviso.';
-    else if (noAr.iphone) plataformas.textContent = 'No iPhone já está na App Store. No Android chega logo depois: deixe seu e-mail em "Me avise" e mandamos um aviso.';
+    else if (noAr.android) plataformas.textContent = 'No Android já está no Google Play. No iPhone chega logo depois: entre na fila de espera e mandamos um aviso.';
+    else if (noAr.iphone) plataformas.textContent = 'No iPhone já está na App Store. No Android chega logo depois: entre na fila de espera e mandamos um aviso.';
   }
 
   /* ---------- código QR (gerado aqui, sem serviço de fora) ---------- */
@@ -113,17 +113,17 @@
     var id = 'email-' + contador;
     var titulo;
     // Antes de qualquer loja aprovar, o título é o mesmo em todo aparelho.
-    if (loja === 'ambas' || (!noAr.android && !noAr.iphone)) titulo = 'O Manhã de Fé está chegando às lojas';
+    if (loja === 'ambas' || (!noAr.android && !noAr.iphone)) titulo = 'Não perca o lançamento: entre na fila de espera';
     else if (loja === 'iphone') titulo = secundario ? 'Tem iPhone? Lá ainda não saiu.' : 'No iPhone, o Manhã de Fé ainda não saiu';
     else titulo = secundario ? 'Tem Android? Lá ainda não saiu.' : 'No Android, o Manhã de Fé ainda não saiu';
     return '<form class="avise' + (secundario ? ' avise-secundario' : '') + '" data-avise data-loja="' + loja + '" novalidate>' +
       '<h3 class="avise-titulo">' + titulo + '</h3>' +
-      '<p class="avise-texto">Deixe seu e-mail e mandamos um único aviso quando der para baixar.</p>' +
+      '<p class="avise-texto">Deixe seu e-mail. No dia em que der para baixar, você recebe o aviso.</p>' +
       '<label class="campo-rotulo" for="' + id + '">Seu e-mail</label>' +
       '<input class="campo" id="' + id + '" name="email" type="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" required>' +
       '<label class="consentimento"><input type="checkbox" name="consentimento" value="sim" required><span>' + TEXTO_CONSENTIMENTO + '</span></label>' +
       '<div class="isca" aria-hidden="true"><label>Deixe em branco <input type="text" name="site" tabindex="-1" autocomplete="off"></label></div>' +
-      '<button class="botao botao-principal" type="submit">Me avise</button>' +
+      '<button class="botao botao-principal" type="submit">Entrar na fila de espera</button>' +
       '<p class="avise-status" role="status" aria-live="polite"></p>' +
       '<p class="avise-nota">Só isso, nada mais. Veja <a href="/privacidade-do-site/">como cuidamos do seu e-mail</a>.</p>' +
       '</form>';
@@ -161,8 +161,8 @@
     status.textContent = texto;
   }
   function sucesso(form, email) {
-    form.innerHTML = '<p class="avise-ok" role="status">Pronto. Anotamos <strong>' + escapar(email) +
-      '</strong>. Quando o Manhã de Fé chegar à loja, mandamos um único e-mail.</p>';
+    form.innerHTML = '<p class="avise-ok" role="status">Pronto, você está na fila de espera com o e-mail <strong>' + escapar(email) +
+      '</strong>. No dia em que o Manhã de Fé chegar à loja, mandamos um único e-mail.</p>';
   }
   document.addEventListener('submit', function (ev) {
     var f = ev.target;
@@ -209,18 +209,18 @@
     }
     if (!destino) {
       var nomeLoja = loja === 'iphone' ? 'iPhone' : loja === 'android' ? 'Android' : 'Android ou iPhone';
-      location.href = 'mailto:contato@manhadefe.com.br?subject=' + encodeURIComponent('Me avise quando o Manhã de Fé sair') +
+      location.href = 'mailto:contato@manhadefe.com.br?subject=' + encodeURIComponent('Fila de espera do Manhã de Fé') +
         '&body=' + encodeURIComponent(TEXTO_CONSENTIMENTO + '\n\nMeu e-mail: ' + email + '\nCelular: ' + nomeLoja + '\n(origem: ' + origem + ')');
-      status.textContent = 'Seu programa de e-mail vai abrir com a mensagem pronta. É só enviar. Se ele não abrir, escreva para contato@manhadefe.com.br com o assunto "Me avise".';
+      status.textContent = 'Seu programa de e-mail vai abrir com a mensagem pronta. É só enviar. Se ele não abrir, escreva para contato@manhadefe.com.br com o assunto "Fila de espera".';
       return;
     }
     botao.disabled = true;
-    botao.textContent = 'Enviando…';
+    botao.textContent = 'Entrando…';
     fetch(destino, { method: 'POST', mode: 'no-cors', body: dados }).then(function () {
       sucesso(f, email);
     }, function () {
       botao.disabled = false;
-      botao.textContent = 'Me avise';
+      botao.textContent = 'Entrar na fila de espera';
       erro(status, 'Não conseguimos registrar agora. Tente de novo em alguns minutos, ou escreva para contato@manhadefe.com.br.');
     });
   });
