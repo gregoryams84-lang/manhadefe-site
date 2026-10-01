@@ -40,6 +40,13 @@ Links para a bio das redes (curtos, estáveis, já com a origem e `meio=bio`,
 caem no bloco da fila de espera / download): `manhadefe.com.br/instagram`,
 `/tiktok`, `/facebook`, `/youtube`, `/whatsapp`, `/kwai`. Campanha: `&campanha=natal`.
 
+`manhadefe.com.br/convite` é o link que o botão ENVIAR do app põe no fim da
+mensagem (origem `whatsapp`, meio `convite`): separa quem chegou por indicação
+de um amigo de quem chegou pela bio (`meio=bio`). Endereço estável, circula em
+mensagens por anos: nunca mudar nem apagar. O meio fica guardado na aba
+(`mdf-meio`) junto com a origem e a campanha, então não se perde se a pessoa
+navegar por outras páginas antes de tocar no botão da loja.
+
 ## QR de impressão
 
 `node ferramentas/gerar-qr.mjs` gera `qr/<origem>.svg` e `.png` (santinho,

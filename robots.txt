@@ -7,5 +7,6 @@ Disallow: /facebook/
 Disallow: /youtube/
 Disallow: /whatsapp/
 Disallow: /kwai/
+Disallow: /convite/
 
 Sitemap: https://manhadefe.com.br/sitemap.xml

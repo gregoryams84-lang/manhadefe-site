@@ -22,15 +22,18 @@
   var params = new URLSearchParams(location.search);
   var origem = limpar(params.get('origem') || params.get('utm_source'));
   var campanha = limpar(params.get('campanha') || params.get('utm_campaign'));
-  var meio = limpar(params.get('meio') || params.get('utm_medium')) || 'site';
+  var meio = limpar(params.get('meio') || params.get('utm_medium'));
   try {
     if (origem) sessionStorage.setItem('mdf-origem', origem);
     else origem = sessionStorage.getItem('mdf-origem') || '';
     if (campanha) sessionStorage.setItem('mdf-campanha', campanha);
     else campanha = sessionStorage.getItem('mdf-campanha') || '';
+    if (meio) sessionStorage.setItem('mdf-meio', meio);   // "bio", "convite", "qr"…
+    else meio = sessionStorage.getItem('mdf-meio') || '';
   } catch (e) { /* aba privada ou armazenamento bloqueado: segue sem lembrar */ }
   origem = origem || 'site';
   campanha = campanha || 'lancamento';
+  meio = meio || 'site';
 
   /* ---------- aparelho e lojas ---------- */
   var ua = navigator.userAgent || '';
@@ -198,7 +201,7 @@
       dados = new URLSearchParams();
       dados.set(formulario.campos.email, email);
       dados.set(formulario.campos.loja, loja);
-      dados.set(formulario.campos.origem, origem + ' · ' + campanha + ' · ' + location.pathname);
+      dados.set(formulario.campos.origem, origem + ' · ' + meio + ' · ' + campanha + ' · ' + location.pathname);
       dados.set(formulario.campos.autorizacao, 'sim — ' + TEXTO_CONSENTIMENTO);
     } else if (C.aviseEndpoint) {
       destino = C.aviseEndpoint;
