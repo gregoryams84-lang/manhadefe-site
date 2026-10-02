@@ -95,7 +95,7 @@ o e-mail pronto para contato@manhadefe.com.br.
 3. Varrer o site atrás de frases que a versão nova desminta (página inicial,
    perguntas frequentes, Termos item 9, `/privacidade-do-site/`).
 4. Enquanto a data não é conhecida, ela fica como `__DATA_DA_PUBLICACAO__`
-   (2 vezes na política, 1 nos Termos). No dia de publicar, trocar pela data
+   (2 vezes na política, 1 nos Termos, 2 na `/privacidade-do-site/`). No dia de publicar, trocar pela data
    por extenso ("8 de outubro de 2026"), conferir que
    `grep -r __DATA_DA_PUBLICACAO__ --include=*.html .` não acha mais nada e
    atualizar o `lastmod` dessas páginas no `sitemap.xml`.
