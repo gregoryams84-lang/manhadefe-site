@@ -85,6 +85,21 @@ As respostas vão para um Formulário Google (`aviseForm` em `js/config.js`;
 detalhes em `apps-script/LEIA-ME.md`). Sem `aviseForm.id`, o formulário abre
 o e-mail pronto para contato@manhadefe.com.br.
 
+## Versão nova da política do app
+
+1. Copiar a `/privacidade/index.html` em vigor para `/privacidade/versao-X-Y/`,
+   acrescentando só `<meta name="robots" content="noindex">` e o aviso "Esta é
+   a versão X.Y, guardada para consulta" (ver `versao-1-0` e `versao-1-1`).
+2. Pôr o texto novo em `/privacidade/`, com o link "ler" da versão guardada no
+   Histórico. O texto da política é do chat do app: aqui só entra a marcação.
+3. Varrer o site atrás de frases que a versão nova desminta (página inicial,
+   perguntas frequentes, Termos item 9, `/privacidade-do-site/`).
+4. Enquanto a data não é conhecida, ela fica como `__DATA_DA_PUBLICACAO__`
+   (2 vezes na política, 1 nos Termos). No dia de publicar, trocar pela data
+   por extenso ("8 de outubro de 2026"), conferir que
+   `grep -r __DATA_DA_PUBLICACAO__ --include=*.html .` não acha mais nada e
+   atualizar o `lastmod` dessas páginas no `sitemap.xml`.
+
 ## Regras que o site não pode quebrar
 
 1. `/privacidade` sempre no ar, com a política completa do app.
