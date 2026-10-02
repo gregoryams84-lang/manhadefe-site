@@ -54,6 +54,24 @@ um deles substitui os três, e o que ele não trouxer volta ao padrão (`site`,
 `site`, `lancamento`). Assim o `convite` de uma chegada anterior não gruda em
 outra origem aberta depois na mesma aba.
 
+**Como nomear origem, meio e campanha.** O texto do link vai inteiro para o
+Google (e às vezes para a Meta) quando a pessoa autoriza a medição no app, e a
+política do app promete que a tradição dela nunca chega a essas empresas. Por
+isso o `site.js` recusa por inteiro, e devolve ao padrão, qualquer valor que:
+
+- tenha mais de 36 caracteres (teto do Firebase) ou algo fora de `a-z`, `0-9`,
+  ponto, hífen e sublinhado (maiúsculas e acentos são normalizados antes);
+- contenha, sem acento, uma destas sequências: aparecida, senhora, maria,
+  catolic, evangel, protestant, crente, gospel, terco, rosario, missa, culto,
+  santo, santa, hino, orac, igreja, padre, pastor, bispo, bibli, jesus, deus,
+  crist, devoc, novena, salmo, louvor, relig, paroqui;
+- seja `desconhecida`, `google-ads` ou `google-play` (marcadores do próprio app).
+
+Então a campanha de outubro não pode chamar `mae-aparecida`: use algo neutro,
+como `campanha=outubro` ou `campanha=15-10`. Recusa, não conserta: um valor
+cortado em 36 ou sem uma letra ainda poderia passar a palavra. A lista é do chat
+do app (02/10/2026) e o app aplica a mesma regra.
+
 ## QR de impressão
 
 `node ferramentas/gerar-qr.mjs` gera `qr/<origem>.svg` e `.png` (santinho,

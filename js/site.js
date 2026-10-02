@@ -16,8 +16,33 @@
   var TEXTO_CONSENTIMENTO = 'Quero receber um único e-mail avisando quando o Manhã de Fé estiver na loja. Depois do aviso, meu e-mail é apagado.';
 
   /* ---------- de onde a pessoa veio ---------- */
+  // O texto do link segue inteiro para a loja e, se a pessoa autorizar a
+  // medição no app, para o Google (e às vezes para a Meta). A política do app
+  // promete que a tradição da pessoa nunca chega a essas empresas, então um
+  // rótulo que a entregue ("aparecida", "bispo"…) é recusado por inteiro e o
+  // valor volta ao padrão. Recusar, não consertar: cortado ou sem uma letra,
+  // "…-evangelico" ainda passaria. Comparação em minúsculas e sem acento.
+  var PALAVRAS_VEDADAS = ['aparecida', 'senhora', 'maria', 'catolic', 'evangel', 'protestant',
+    'crente', 'gospel', 'terco', 'rosario', 'missa', 'culto', 'santo', 'santa', 'hino', 'orac',
+    'igreja', 'padre', 'pastor', 'bispo', 'bibli', 'jesus', 'deus', 'crist', 'devoc', 'novena',
+    'salmo', 'louvor', 'relig', 'paroqui'];
+  var NOMES_DO_APP = ['desconhecida', 'google-ads', 'google-play']; // marcadores que o próprio app usa
+  var MAXIMO = 36; // teto do Firebase; o app corta em 36
+
+  function semAcento(s) {
+    if (String.prototype.normalize) return s.normalize('NFD').replace(/[̀-ͯ]/g, '');
+    var mapa = { 'ç': 'c', 'á': 'a', 'à': 'a', 'â': 'a', 'ã': 'a', 'ä': 'a', 'é': 'e', 'è': 'e', 'ê': 'e', 'ë': 'e',
+      'í': 'i', 'ì': 'i', 'î': 'i', 'ï': 'i', 'ó': 'o', 'ò': 'o', 'ô': 'o', 'õ': 'o', 'ö': 'o', 'ú': 'u', 'ù': 'u', 'û': 'u', 'ü': 'u', 'ñ': 'n' };
+    return s.replace(/[çáàâãäéèêëíìîïóòôõöúùûüñ]/g, function (c) { return mapa[c]; });
+  }
   function limpar(v) {
-    return String(v || '').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 40);
+    var s = semAcento(String(v || '').toLowerCase());
+    if (!s || s.length > MAXIMO || !/^[a-z0-9._-]+$/.test(s)) return '';
+    if (NOMES_DO_APP.indexOf(s) !== -1) return '';
+    for (var i = 0; i < PALAVRAS_VEDADAS.length; i++) {
+      if (s.indexOf(PALAVRAS_VEDADAS[i]) !== -1) return '';
+    }
+    return s;
   }
   var params = new URLSearchParams(location.search);
   var origem = limpar(params.get('origem') || params.get('utm_source'));
