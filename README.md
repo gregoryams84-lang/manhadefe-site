@@ -43,9 +43,16 @@ caem no bloco da fila de espera / download): `manhadefe.com.br/instagram`,
 `manhadefe.com.br/convite` é o link que o botão ENVIAR do app põe no fim da
 mensagem (origem `whatsapp`, meio `convite`): separa quem chegou por indicação
 de um amigo de quem chegou pela bio (`meio=bio`). Endereço estável, circula em
-mensagens por anos: nunca mudar nem apagar. O meio fica guardado na aba
-(`mdf-meio`) junto com a origem e a campanha, então não se perde se a pessoa
-navegar por outras páginas antes de tocar no botão da loja.
+mensagens por anos: nunca mudar nem apagar. A página traz as etiquetas `og:`
+da página inicial, para o link ganhar título e imagem quando alguém o cola
+sozinho numa conversa.
+
+Origem, meio e campanha ficam guardados na aba (`mdf-origem`, `mdf-meio`,
+`mdf-campanha`) e não se perdem se a pessoa navegar por outras páginas antes de
+tocar no botão da loja. Os três andam juntos: um link novo que traga qualquer
+um deles substitui os três, e o que ele não trouxer volta ao padrão (`site`,
+`site`, `lancamento`). Assim o `convite` de uma chegada anterior não gruda em
+outra origem aberta depois na mesma aba.
 
 ## QR de impressão
 

@@ -24,12 +24,20 @@
   var campanha = limpar(params.get('campanha') || params.get('utm_campaign'));
   var meio = limpar(params.get('meio') || params.get('utm_medium'));
   try {
-    if (origem) sessionStorage.setItem('mdf-origem', origem);
-    else origem = sessionStorage.getItem('mdf-origem') || '';
-    if (campanha) sessionStorage.setItem('mdf-campanha', campanha);
-    else campanha = sessionStorage.getItem('mdf-campanha') || '';
-    if (meio) sessionStorage.setItem('mdf-meio', meio);   // "bio", "convite", "qr"…
-    else meio = sessionStorage.getItem('mdf-meio') || '';
+    if (origem || meio || campanha) {
+      // Chegada nova: origem, meio ("bio", "convite", "qr"…) e campanha andam
+      // juntos. O que este link não trouxe é esquecido, para o "convite" de
+      // uma chegada anterior na mesma aba não grudar em outra origem.
+      [['mdf-origem', origem], ['mdf-meio', meio], ['mdf-campanha', campanha]].forEach(function (par) {
+        if (par[1]) sessionStorage.setItem(par[0], par[1]);
+        else sessionStorage.removeItem(par[0]);
+      });
+    } else {
+      // Outra página do site, sem nada no endereço: vale a chegada guardada.
+      origem = limpar(sessionStorage.getItem('mdf-origem'));
+      meio = limpar(sessionStorage.getItem('mdf-meio'));
+      campanha = limpar(sessionStorage.getItem('mdf-campanha'));
+    }
   } catch (e) { /* aba privada ou armazenamento bloqueado: segue sem lembrar */ }
   origem = origem || 'site';
   campanha = campanha || 'lancamento';
