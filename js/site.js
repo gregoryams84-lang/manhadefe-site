@@ -106,7 +106,7 @@
   var plataformas = document.querySelector('[data-texto-plataformas]');
   if (plataformas) {
     if (noAr.android && noAr.iphone) plataformas.textContent = 'Sim, nos dois: Google Play e App Store.';
-    else if (noAr.android) plataformas.textContent = 'No Android já está no Google Play. No iPhone chega logo depois: entre na fila de espera e mandamos um aviso.';
+    else if (noAr.android) plataformas.textContent = 'No Android já está no Google Play. Em breve no iPhone: deixe seu e-mail na fila de espera e avisamos no dia em que sair.';
     else if (noAr.iphone) plataformas.textContent = 'No iPhone já está na App Store. No Android chega logo depois: entre na fila de espera e mandamos um aviso.';
   }
 
@@ -150,16 +150,16 @@
     var titulo;
     // Antes de qualquer loja aprovar, o título é o mesmo em todo aparelho.
     if (loja === 'ambas' || (!noAr.android && !noAr.iphone)) titulo = 'Não perca o lançamento: entre na fila de espera';
-    else if (loja === 'iphone') titulo = secundario ? 'Tem iPhone? Lá ainda não saiu.' : 'No iPhone, o Manhã de Fé ainda não saiu';
+    else if (loja === 'iphone') titulo = secundario ? 'Tem iPhone? Em breve sai lá também.' : 'Em breve no iPhone';
     else titulo = secundario ? 'Tem Android? Lá ainda não saiu.' : 'No Android, o Manhã de Fé ainda não saiu';
     return '<form class="avise' + (secundario ? ' avise-secundario' : '') + '" data-avise data-loja="' + loja + '" novalidate>' +
       '<h3 class="avise-titulo">' + titulo + '</h3>' +
-      '<p class="avise-texto">Deixe seu e-mail. No dia em que der para baixar, você recebe o aviso.</p>' +
+      '<p class="avise-texto">' + (loja === 'iphone' ? 'Deixe seu e-mail. No dia em que sair para iPhone, você recebe o aviso.' : 'Deixe seu e-mail. No dia em que der para baixar, você recebe o aviso.') + '</p>' +
       '<label class="campo-rotulo" for="' + id + '">Seu e-mail</label>' +
       '<input class="campo" id="' + id + '" name="email" type="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" required>' +
       '<label class="consentimento"><input type="checkbox" name="consentimento" value="sim" required><span>' + TEXTO_CONSENTIMENTO + '</span></label>' +
       '<div class="isca" aria-hidden="true"><label>Deixe em branco <input type="text" name="site" tabindex="-1" autocomplete="off"></label></div>' +
-      '<button class="botao botao-principal" type="submit">Entrar na fila de espera</button>' +
+      '<button class="botao botao-principal" type="submit">' + (loja === 'iphone' ? 'Me avise quando sair para iPhone' : 'Entrar na fila de espera') + '</button>' +
       '<p class="avise-status" role="status" aria-live="polite"></p>' +
       '<p class="avise-nota">Só isso, nada mais. Veja <a href="/privacidade-do-site/">como cuidamos do seu e-mail</a>.</p>' +
       '</form>';

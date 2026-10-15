@@ -12,7 +12,7 @@ window.MDF_CONFIG = {
 
   lojas: {
     android: {
-      noAr: false,
+      noAr: true,
       pacote: 'com.manhadefe.manha_de_fe'
     },
     iphone: {
