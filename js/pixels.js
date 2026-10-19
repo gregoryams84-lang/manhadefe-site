@@ -1,8 +1,9 @@
 // Pixel do TikTok, carregado SÓ depois do "Aceitar" (consentimento.js) e só
 // com ID em pixels-config.js. O que ele recebe daqui:
-//   - a página aberta (ttq.page), em todas as páginas que têm o aviso;
+//   - a página aberta (ttq.page + ViewContent com o caminho da página);
 //   - ClickButton quando a pessoa toca no selo do Google Play;
-//   - SubmitForm quando alguém entra na fila de espera do iPhone.
+//   - Lead quando alguém entra na fila de espera do iPhone (é como o modelo
+//     "Inscrição na oferta" do TikTok chama o envio de formulário).
 // Nunca sai daqui e-mail, nome ou qualquer coisa digitada: o e-mail da fila vai
 // só para o Formulário Google (site.js). Nada de identify.
 (function () {
@@ -28,6 +29,7 @@
     };
     ttq.load(id);
     ttq.page();
+    ttq.track('ViewContent', { contents: [{ content_id: location.pathname, content_type: 'product', content_name: document.title }] });
   }
 
   function tiktok(fn) {
@@ -47,7 +49,7 @@
     var a = ev.target && ev.target.closest ? ev.target.closest('a.selo-android') : null;
     if (!a) return;
     tiktok(function () {
-      window.ttq.track('ClickButton', { content_type: 'product', content_id: 'google_play', content_name: 'Selo do Google Play' });
+      window.ttq.track('ClickButton', { contents: [{ content_id: 'google_play', content_type: 'product', content_name: 'Selo do Google Play' }] });
     });
   }, true);
 
@@ -55,7 +57,7 @@
   document.addEventListener('mdf:fila', function (ev) {
     var loja = (ev.detail && ev.detail.loja) || 'fila';
     tiktok(function () {
-      window.ttq.track('SubmitForm', { content_type: 'product', content_id: 'fila-' + loja, content_name: 'Fila de espera ' + loja });
+      window.ttq.track('Lead', { contents: [{ content_id: 'fila-' + loja, content_type: 'product', content_name: 'Fila de espera ' + loja }] });
     });
   });
 })();

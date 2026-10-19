@@ -110,7 +110,7 @@ o e-mail pronto para contato@manhadefe.com.br.
 6. Acessibilidade: letra de 18 px ou mais, botões de 64 px ou mais, contraste alto.
 7. O único terceiro no site é o pixel do TikTok (`js/pixels.js`), que só carrega
    depois do "Aceitar" no aviso de cookies (`js/consentimento.js`) e só com ID em
-   `js/pixels-config.js`. Sem ID, o aviso nem aparece. Eventos: página aberta,
-   `ClickButton` no selo da Play, `SubmitForm` na fila do iPhone; nunca e-mail
-   nem nome. Outro pixel ou análise de visitas exige antes nova versão da
+   `js/pixels-config.js`. Sem ID, o aviso nem aparece. Eventos (modelo "Inscrição
+   na oferta" do TikTok): página aberta + `ViewContent`, `ClickButton` no selo da
+   Play, `Lead` na fila do iPhone; nunca e-mail nem nome (sem `ttq.identify`). Outro pixel ou análise de visitas exige antes nova versão da
    `/privacidade-do-site/` (a política do app não muda).
