@@ -4,5 +4,5 @@
 // O pixel só entra depois que a pessoa toca em "Aceitar" no aviso (consentimento.js).
 // Nunca pôr aqui pixel de outro negócio (Toca o Negócio, Polo Anhanguera).
 window.MDF_PIXELS = {
-  tiktokPixelId: ''
+  tiktokPixelId: 'DBALS0JC77U6I3S6PDDG' // pixel "Manhã de Fé - site", criado em 2026-10-18
 };
