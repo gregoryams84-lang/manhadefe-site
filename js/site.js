@@ -197,6 +197,7 @@
     status.textContent = texto;
   }
   function sucesso(form, email) {
+    try { document.dispatchEvent(new CustomEvent('mdf:fila', { detail: { loja: form.getAttribute('data-loja') } })); } catch (e) { /* navegador antigo: segue sem avisar */ }
     form.innerHTML = '<p class="avise-ok" role="status">Pronto, você está na fila de espera com o e-mail <strong>' + escapar(email) +
       '</strong>. No dia em que o Manhã de Fé chegar à loja, mandamos um único e-mail.</p>';
   }

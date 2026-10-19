@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacidade deste site · Manhã de Fé</title>
-<meta name="description" content="Como o site manhadefe.com.br trata informações: sem cookies, sem ferramentas de análise e sem pixels. O e-mail da fila de espera serve para um único aviso.">
+<meta name="description" content="Como o site manhadefe.com.br trata informações: sem ferramenta de análise; um pixel do TikTok só se você aceitar; o e-mail da fila de espera serve para um único aviso.">
 <link rel="canonical" href="https://manhadefe.com.br/privacidade-do-site/">
 <meta name="theme-color" content="#FBF6EC">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -12,6 +12,9 @@
 <link rel="stylesheet" href="/css/site.css">
 <script src="/js/config.js" defer></script>
 <script src="/js/site.js" defer></script>
+<script src="/js/pixels-config.js" defer></script>
+<script src="/js/pixels.js" defer></script>
+<script src="/js/consentimento.js" defer></script>
 </head>
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -34,10 +37,10 @@
 
 <main id="conteudo" class="documento">
   <h1>Privacidade deste site</h1>
-  <p class="data-versao">Versão 1.1 — vigente desde 9 de outubro de 2026.</p>
+  <p class="data-versao">Versão 1.2 — vigente desde __DATA_DA_PUBLICACAO__.</p>
 
   <div class="destaque">
-    <p><strong>Em uma frase:</strong> este site não usa cookies, ferramentas de análise nem pixels de anúncio. A única informação pessoal que ele pode receber é o e-mail que você digitar na fila de espera ("Entrar na fila de espera"), e ele serve para um único aviso.</p>
+    <p><strong>Em uma frase:</strong> este site não usa ferramenta de análise de visitas. O único cookie que ele pode criar é o de um pixel do TikTok, e só se você tocar em "Aceitar" no aviso (item 3). A única informação pessoal que ele pode receber é o e-mail que você digitar na fila de espera, e ele serve para um único aviso.</p>
   </div>
 
   <p>Esta página vale para o site <strong>manhadefe.com.br</strong>. O aplicativo Manhã de Fé tem política própria, na <a href="/privacidade/">Política de privacidade do aplicativo</a>, que explica o que fica só no seu aparelho e a medição dos anúncios, feita apenas com a sua autorização.</p>
@@ -47,18 +50,28 @@
 
   <h2>2. O que o site não faz</h2>
   <ul>
-    <li>Não usa cookies.</li>
-    <li>Não usa ferramentas de análise de visitas, nem pixels de anúncio (Facebook, Instagram, TikTok, Google ou outros).</li>
-    <li>Não carrega fontes, vídeos ou programas de outros sites: tudo vem do próprio manhadefe.com.br.</li>
+    <li>Não usa ferramentas de análise de visitas.</li>
+    <li>Não usa pixel do Facebook, do Instagram, do Google nem de outra empresa. O único é o do TikTok, e só se você aceitar (item 3).</li>
+    <li>Não cria cookie nenhum enquanto você não aceitar o aviso. Se você recusar, o site guarda só a sua resposta ("recusado"), no seu navegador, para não perguntar de novo.</li>
+    <li>Não carrega fontes, vídeos ou programas de outros sites, fora o do pixel do TikTok depois do seu aceite: o resto vem do próprio manhadefe.com.br.</li>
     <li>Não vende nem repassa informação de ninguém.</li>
   </ul>
 
-  <h2>3. Fila de espera: o seu e-mail</h2>
+  <h2 id="tiktok">3. Pixel do TikTok (só se você aceitar)</h2>
+  <p>Divulgamos o Manhã de Fé em vídeos no TikTok. Para saber se esses vídeos trazem gente até o site, usamos o pixel do TikTok, um pequeno programa da TikTok Pte. Ltd. que só é carregado depois que você toca em <strong>Aceitar</strong> no aviso que aparece embaixo da página. Se você tocar em <strong>Recusar</strong>, ou não tocar em nada, ele não é carregado e nada é enviado ao TikTok.</p>
+  <p><strong>O que o TikTok recebe, se você aceitar:</strong> que o seu navegador abriu uma página deste site e qual página; que você tocou no selo do Google Play; que você entrou na fila de espera do iPhone (só o fato, nunca o seu e-mail); o endereço de rede (IP) e dados técnicos do navegador e do aparelho; e os cookies que o próprio TikTok cria no seu navegador. Se você tem conta no TikTok, ele pode ligar essas visitas à sua conta, mesmo sem estar com o aplicativo aberto.</p>
+  <p><strong>Para quê:</strong> para nós, contar quantas visitas e quantos toques no selo vieram de cada vídeo ou anúncio nosso no TikTok. Para o TikTok, além disso, para escolher a quem mostrar anúncios e melhorar os produtos dele, conforme a <a href="https://www.tiktok.com/legal/page/row/privacy-policy/pt-BR">política de privacidade do TikTok</a>. Não temos como impedir esse uso pelo TikTok; por isso o pixel só liga com o seu aceite.</p>
+  <p><strong>O que nunca vai para o TikTok por este site:</strong> o seu e-mail, o seu nome, a sua tradição religiosa ou qualquer coisa que você digite. Este site é sobre um aplicativo de fé, e visitar uma página dele pode sugerir a sua convicção religiosa; é mais um motivo para o pixel depender da sua autorização expressa.</p>
+  <p><strong>Com base em quê:</strong> na sua autorização (consentimento, art. 7º, inciso I, e art. 11, inciso I, da LGPD), dada ao tocar em Aceitar. Os dados vão para servidores do TikTok fora do Brasil (art. 33, inciso VIII, da LGPD), e o aviso diz isso antes de você decidir.</p>
+  <p><strong>Por quanto tempo:</strong> a sua resposta (aceito ou recusado) fica no seu navegador até você apagá-la. Os cookies do TikTok seguem o prazo definido por ele, de até 13 meses.</p>
+  <p><strong>Mudou de ideia?</strong> <a href="#" onclick="return mudarCookies()">Mudar minha escolha sobre cookies</a>: o aviso aparece de novo e você responde outra vez. Quem tinha aceitado para de ser medido ao recarregar a página. Para apagar os cookies que o TikTok já criou, limpe os cookies do site nas configurações do navegador. Para pedir ao TikTok a eliminação do que ele recebeu, use as configurações de privacidade da sua conta no TikTok ou escreva para <a href="mailto:contato@manhadefe.com.br">contato@manhadefe.com.br</a>, que encaminhamos.</p>
+
+  <h2>4. Fila de espera: o seu e-mail</h2>
   <p>Enquanto o aplicativo não está na loja, você pode deixar o seu e-mail para receber um aviso. Nesse caso guardamos:</p>
   <ul>
     <li>o e-mail que você digitou;</li>
     <li>a loja do aviso (Android, iPhone ou as duas);</li>
-    <li>de qual link você chegou ao site (ver item 4) e a página onde preencheu;</li>
+    <li>de qual link você chegou ao site (ver item 5) e a página onde preencheu;</li>
     <li>a data e a hora, e o texto da autorização que você marcou.</li>
   </ul>
   <p><strong>Para quê:</strong> mandar <strong>um único e-mail</strong> avisando que o Manhã de Fé chegou à loja. Nada além disso: nada de propaganda, nada de lista de ofertas.</p>
@@ -68,26 +81,26 @@
   <p><strong>Mudou de ideia?</strong> Escreva para <a href="mailto:contato@manhadefe.com.br">contato@manhadefe.com.br</a> e apagamos na hora.</p>
   <p>Se o formulário abrir o seu programa de e-mail em vez de enviar sozinho, a mensagem chega à nossa caixa de entrada e segue exatamente as mesmas regras.</p>
 
-  <h2>4. De qual link você veio</h2>
+  <h2>5. De qual link você veio</h2>
   <p>Quando você chega por um link com a palavra <em>origem</em> no endereço (por exemplo, de uma publicação no Instagram ou do código impresso num santinho), o site guarda essa palavra só nesta aba do navegador. Quando o link traz, o site guarda também o caminho por onde você chegou (por exemplo, "bio" ou "convite") e o nome da campanha. Quando você toca no selo para baixar, essas palavras seguem para a loja. Serve para sabermos, em números totais, quantas instalações vieram de cada lugar, pelos relatórios da própria Google Play e da App Store. Isso não identifica você e some quando a aba é fechada.</p>
   <p>No Android, a loja repassa essas palavras ao aplicativo depois da instalação. Ele as guarda no aparelho e só as envia com a sua autorização: ao Google e, quando o texto do link contém "fb" ou "facebook", também à Meta, como explica o item 9 da <a href="/privacidade/">Política de privacidade do aplicativo</a>.</p>
 
-  <h2>5. "Mande um versículo hoje"</h2>
+  <h2>6. "Mande um versículo hoje"</h2>
   <p>A imagem do versículo é montada no seu próprio navegador. Nada é enviado para nós: ela vai direto para o aplicativo que você escolher para mandar, ou para a pasta de downloads do seu computador.</p>
 
-  <h2>6. Hospedagem</h2>
+  <h2>7. Hospedagem</h2>
   <p>O site fica hospedado no GitHub Pages, serviço da GitHub, Inc. Como qualquer servidor, ele registra dados técnicos de acesso, como o endereço IP, para funcionar e para se proteger de ataques, conforme a política de privacidade da GitHub. Nós não temos acesso a esses registros.</p>
 
-  <h2>7. As lojas</h2>
+  <h2>8. As lojas</h2>
   <p>Ao tocar no selo da Google Play ou da App Store, você sai deste site e passa a usar a loja, com as regras de privacidade de cada empresa.</p>
 
-  <h2>8. Seus direitos</h2>
+  <h2>9. Seus direitos</h2>
   <p>A LGPD garante a você o direito de confirmar se tratamos algum dado seu, de acessar, corrigir, apagar e de retirar a autorização a qualquer momento. Para qualquer um deles, escreva para <a href="mailto:contato@manhadefe.com.br">contato@manhadefe.com.br</a>.</p>
 
-  <h2>9. Mudanças</h2>
+  <h2>10. Mudanças</h2>
   <p>Se o site passar a tratar alguma informação nova, esta página será atualizada antes, com nova data de vigência.</p>
-  <p><strong>Histórico:</strong> versão 1.0, de 14 de setembro de 2026; versão 1.1, de 9 de outubro de 2026: reúne os ajustes feitos desde setembro. O item 3 diz que a fila de espera fica num formulário do Google, e o item 4 diz que o site guarda também o caminho e o nome da campanha, e o que o aplicativo faz com essas palavras.</p>
-</main>
+  <p><strong>Histórico:</strong> versão 1.0, de 14 de setembro de 2026; versão 1.1, de 9 de outubro de 2026: formulário do Google na fila de espera, caminho e campanha do link, o que o aplicativo faz com essas palavras; versão 1.2, de __DATA_DA_PUBLICACAO__: acrescentado o item 3, sobre o pixel do TikTok com aceite, e ajustados o resumo, o item 2 e a frase do rodapé sobre cookies.</p>
+  </main>
 
 <footer class="rodape">
   <div class="container rodape-grade">
@@ -105,8 +118,17 @@
     </nav>
   </div>
   <div class="container rodape-fim">
-    <p>© 2026 Manhã de Fé · AUREA EDUCACIONAL LTDA · Este site não usa cookies.</p>
+    <p>© 2026 Manhã de Fé · AUREA EDUCACIONAL LTDA · Este site só usa cookies se você aceitar.</p>
   </div>
 </footer>
+<div id="banner-cookies" class="banner-cookies" role="region" aria-label="Aviso sobre cookies" hidden>
+  <div class="container banner-cookies-dentro">
+    <p>Podemos usar um pixel do TikTok para saber se os nossos vídeos trazem gente até aqui. Só se você aceitar. Recusar não muda nada do que você vê. <a href="/privacidade-do-site/#tiktok">Saiba o que o TikTok recebe</a>.</p>
+    <div class="banner-cookies-botoes">
+      <button type="button" class="botao botao-secundario botao-recusar" onclick="recusarCookies()">Recusar</button>
+      <button type="button" class="botao botao-principal botao-aceitar" onclick="aceitarCookies()">Aceitar</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>

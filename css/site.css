@@ -478,3 +478,24 @@ html:not([data-aparelho="outro"]) .selo img { height: 80px; max-width: 100%; }
   background: var(--creme); box-shadow: 0 18px 36px -26px rgba(34, 29, 24, .55);
 }
 .tela-solta figcaption { margin-top: 12px; font-size: 18px; line-height: 1.45; color: var(--tinta-2); }
+
+/* ---- Aviso de cookies (só aparece com pixel configurado; ver js/consentimento.js) ---- */
+.banner-cookies {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 100;
+  background: var(--tinta); color: var(--creme);
+  padding: 18px 0; box-shadow: 0 -4px 18px rgba(0, 0, 0, .25);
+}
+.banner-cookies-dentro { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between; }
+.banner-cookies p { margin: 0; max-width: 62ch; font-size: 18px; line-height: 1.5; color: var(--creme); }
+.banner-cookies a { color: var(--creme); text-decoration: underline; text-underline-offset: 3px; }
+.banner-cookies-botoes { display: flex; gap: 12px; flex: none; }
+.banner-cookies .botao-recusar { border-color: var(--creme); color: var(--creme); background: transparent; }
+.banner-cookies .botao-recusar:hover { background: rgba(251, 246, 236, .12); }
+.banner-cookies .botao-aceitar { background: var(--creme); border-color: var(--creme); color: var(--tinta); }
+.banner-cookies .botao-aceitar:hover { background: var(--papel); border-color: var(--papel); color: var(--tinta); }
+@media (max-width: 700px) {
+  .banner-cookies-botoes { width: 100%; }
+  .banner-cookies-botoes .botao { flex: 1 1 0; padding-left: 12px; padding-right: 12px; }
+}
+/* Com o aviso aberto, o fim da página não fica escondido atrás dele. */
+html[data-banner-cookies="aberto"] body { padding-bottom: 240px; }

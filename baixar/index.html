@@ -13,6 +13,9 @@
 <link rel="stylesheet" href="/css/site.css">
 <script src="/js/config.js" defer></script>
 <script src="/js/site.js" defer></script>
+<script src="/js/pixels-config.js" defer></script>
+<script src="/js/pixels.js" defer></script>
+<script src="/js/consentimento.js" defer></script>
 </head>
 <body data-pagina="baixar">
 <main id="conteudo" class="baixar-pagina">
@@ -31,5 +34,14 @@
 
   <p style="margin-top:28px"><a href="/">Conhecer o Manhã de Fé</a></p>
 </main>
+<div id="banner-cookies" class="banner-cookies" role="region" aria-label="Aviso sobre cookies" hidden>
+  <div class="container banner-cookies-dentro">
+    <p>Podemos usar um pixel do TikTok para saber se os nossos vídeos trazem gente até aqui. Só se você aceitar. Recusar não muda nada do que você vê. <a href="/privacidade-do-site/#tiktok">Saiba o que o TikTok recebe</a>.</p>
+    <div class="banner-cookies-botoes">
+      <button type="button" class="botao botao-secundario botao-recusar" onclick="recusarCookies()">Recusar</button>
+      <button type="button" class="botao botao-principal botao-aceitar" onclick="aceitarCookies()">Aceitar</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
