@@ -25,7 +25,7 @@
   var PALAVRAS_VEDADAS = ['aparecida', 'senhora', 'maria', 'catolic', 'evangel', 'protestant',
     'crente', 'gospel', 'terco', 'rosario', 'missa', 'culto', 'santo', 'santa', 'hino', 'orac',
     'igreja', 'padre', 'pastor', 'bispo', 'bibli', 'jesus', 'deus', 'crist', 'devoc', 'novena',
-    'salmo', 'louvor', 'relig', 'paroqui'];
+    'salmo', 'louvor', 'relig', 'paroqui', 'santinh'];   // santinho/santinha: objeto devocional
   var NOMES_DO_APP = ['desconhecida', 'google-ads', 'google-play']; // marcadores que o próprio app usa
   var MAXIMO = 36; // teto do Firebase; o app corta em 36
 

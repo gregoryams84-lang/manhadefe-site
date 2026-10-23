@@ -64,7 +64,8 @@ isso o `site.js` recusa por inteiro, e devolve ao padrão, qualquer valor que:
 - contenha, sem acento, uma destas sequências: aparecida, senhora, maria,
   catolic, evangel, protestant, crente, gospel, terco, rosario, missa, culto,
   santo, santa, hino, orac, igreja, padre, pastor, bispo, bibli, jesus, deus,
-  crist, devoc, novena, salmo, louvor, relig, paroqui;
+  crist, devoc, novena, salmo, louvor, relig, paroqui, santinh (santinho é objeto
+  devocional católico; a regra é a do espírito, não só da lista);
 - seja `desconhecida`, `google-ads` ou `google-play` (marcadores do próprio app).
 
 Então a campanha de outubro não pode chamar `mae-aparecida`: use algo neutro,
@@ -74,7 +75,7 @@ do app (02/10/2026) e o app aplica a mesma regra.
 
 ## QR de impressão
 
-`node ferramentas/gerar-qr.mjs` gera `qr/<origem>.svg` e `.png` (santinho,
+`node ferramentas/gerar-qr.mjs` gera `qr/<origem>.svg` e `.png` (folheto,
 impresso, facebook, instagram, tiktok, youtube, whatsapp). Todos apontam para
 `/baixar/?origem=<origem>&meio=qr`: a loja pode mudar sem reimprimir nada.
 Tamanho mínimo impresso: 2,5 cm, sem cortar a borda clara.

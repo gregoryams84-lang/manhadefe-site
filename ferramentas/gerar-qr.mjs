@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://manhadefe.com.br';
-const ORIGENS = ['santinho', 'impresso', 'facebook', 'instagram', 'tiktok', 'youtube', 'whatsapp'];
+const ORIGENS = ['folheto', 'impresso', 'facebook', 'instagram', 'tiktok', 'youtube', 'whatsapp'];
 const ESCURO = [0x22, 0x1d, 0x18];   // tinta do app
 const CLARO = [0xfb, 0xf6, 0xec];    // creme do app
 const PX = 20;                       // pixels por módulo no PNG
